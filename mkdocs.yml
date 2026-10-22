@@ -1,0 +1,109 @@
+site_name: Linux Mastery Path
+site_description: A free Linux course — the filesystem, permissions, users, processes, packages, systemd, logging, disks, networking, firewalls, container building blocks, performance and troubleshooting.
+site_url: https://sigilipelli.github.io/linux-mastery-path/
+repo_url: https://github.com/sigilipelli/linux-mastery-path
+repo_name: linux-mastery-path
+
+theme:
+  name: material
+  favicon: assets/favicon.svg
+  custom_dir: docs/overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/progress-tracker.css
+
+extra_javascript:
+  - javascripts/progress-tracker.js
+
+nav:
+  - Home: index.md
+  - Privacy Policy: privacy.md
+  - License: license.md
+  - "Level 1 · Linux Foundations":
+      - Overview: level-1/index.md
+      - "01 · What Linux Is: Kernel, Distributions & Userland": level-1/01-what-linux-is.md
+      - "02 · The Filesystem Hierarchy & Everything Is a File": level-1/02-filesystem-hierarchy.md
+      - "03 · Files, Directories, Links & Inodes": level-1/03-files-links-inodes.md
+      - "04 · Permissions, umask, setuid & ACLs": level-1/04-permissions.md
+      - "05 · Users, Groups & sudo": level-1/05-users-groups-sudo.md
+      - "06 · Text Streams, Pipes & the Core Tools": level-1/06-text-pipelines.md
+      - "07 · Processes, Signals & Job Control": level-1/07-processes-signals.md
+      - "08 · Package Management: apt, dnf & Friends": level-1/08-package-management.md
+      - "09 · Getting Help: man, info & Reading Docs": level-1/09-getting-help.md
+      - "10 · Project — A Portable System Audit Script": level-1/10-project-portable-audit.md
+  - "Level 2 · System Administration":
+      - Overview: level-2/index.md
+      - "01 · Booting & systemd Basics": level-2/01-boot-systemd.md
+      - "02 · systemd Units, Services & Timers": level-2/02-units-timers.md
+      - "03 · Logging: journald, syslog & logrotate": level-2/03-logging-journald.md
+      - "04 · Disks, Partitions & Filesystems": level-2/04-disks-filesystems.md
+      - "05 · LVM, RAID & Storage Layers": level-2/05-lvm-raid.md
+      - "06 · Networking: Interfaces, Routes, DNS & ss": level-2/06-networking-basics.md
+      - "07 · Firewalls: nftables, iptables & ufw": level-2/07-firewalls.md
+      - "08 · SSH: Keys, Config & Hardening": level-2/08-ssh-keys.md
+      - "09 · Scheduling: cron, at & Timers": level-2/09-scheduling-cron.md
+      - "10 · Project — A Server Hardening Linter": level-2/10-project-hardening-linter.md
+  - "Level 3 · Internals & Performance":
+      - Overview: level-3/index.md
+      - "01 · System Calls & the Kernel Boundary": level-3/01-syscalls-kernel.md
+      - "02 · Memory: Page Cache, Swap & the OOM Killer": level-3/02-memory-management.md
+      - "03 · /proc and /sys: The Kernel's Windows": level-3/03-proc-sys.md
+      - "04 · CPU Scheduling & Load Average": level-3/04-cpu-scheduling-load.md
+      - "05 · I/O, Block Layer & Storage Performance": level-3/05-io-storage-performance.md
+      - "06 · Namespaces & cgroups: How Containers Work": level-3/06-namespaces-cgroups.md
+      - "07 · Capabilities, SELinux & AppArmor": level-3/07-mac-capabilities.md
+      - "08 · The Network Stack: Sockets, TCP & netfilter": level-3/08-network-stack.md
+      - "09 · Performance Analysis: USE Method & Tools": level-3/09-performance-method.md
+      - "10 · Project — A /proc-Based Monitor with Tests": level-3/10-project-proc-monitor.md
+  - "Level 4 · Operations & Reliability":
+      - Overview: level-4/index.md
+      - "01 · Robust Shell Scripts": level-4/01-robust-shell-scripts.md
+      - "02 · Backups: tar, rsync & Restore Testing": level-4/02-backups-rsync.md
+      - "03 · Automation & Configuration Management": level-4/03-automation-config.md
+      - "04 · A Troubleshooting Method That Works": level-4/04-troubleshooting-method.md
+      - "05 · Patching, Kernel Updates & Reboots": level-4/05-patching-kernels.md
+      - "06 · Troubleshooting Disks & Filesystems": level-4/06-storage-troubleshooting.md
+      - "07 · Troubleshooting the Network": level-4/07-network-troubleshooting.md
+      - "08 · Security Auditing: auditd, Lynis & Logs": level-4/08-security-auditing.md
+      - "09 · Containers on Linux: Images, Runtimes & Limits": level-4/09-containers-on-linux.md
+      - "10 · Capstone — A Production Runbook & Checker": level-4/10-capstone-runbook.md
