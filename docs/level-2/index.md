@@ -1,30 +1,46 @@
 ---
-description: "Linux Level 2: systemd, units and timers, logging, disks, LVM and RAID, networking, firewalls, SSH, cron and a hardening linter."
+description: "Linux Level 2: signals, the CFS scheduler, virtual memory and the OOM killer, disks/LVM, mounting, and systemd units, services, timers and journald."
 ---
 
-# Level 2 · System Administration
+# Level 2 · Processes, Memory & Storage
 
-Level 2 is the everyday work of keeping a Linux server running: how it boots, how services are defined and supervised, where logs go and why rotation needs a signal, how disks and filesystems are laid out, how RAID's parity actually works, how to reason about addresses, routes, DNS and ports, how to design a default-deny firewall, how to use and harden SSH, and how scheduling really behaves.
+Level 2 is about a system that's running, not just installed. You'll send real signals and watch processes change
+state, read `/proc/<pid>/status` to see what the kernel actually tracks about a process, trigger an OOM kill on
+purpose, partition and mount a disk with LVM, and write your own `systemd` unit files instead of only reading ones
+someone else wrote.
 
 !!! note "What was run, and what wasn't"
-    Linux-only services (`systemd`, `journald`, `nftables`, `LVM`, `mdadm`, `sshd`) **were not run**; their behaviour is taken from man pages (man7.org) and kernel documentation. What *was* run on macOS: real SSH key generation and inspection, subnet arithmetic with `ipaddress`, real TCP sockets on loopback, a disk image created, formatted and filled, file-descriptor experiments for log rotation, and **tested Python tools** for
-    systemd unit files, `fstab`, firewall rule evaluation, RAID parity, cron expressions and hardening. Each lesson says which is which.
+    Process, memory, disk and `systemd` examples in this level were run on a real Linux VM. Memory-pressure and
+    OOM-killer behaviour depends on the kernel's `overcommit` settings and available RAM, so exact numbers (how much
+    memory before the kill, which process is chosen) will differ on your machine — the mechanism shown is real, the
+    specific numbers are this lab's, and the lessons say so.
 
-**Prerequisites:** Level 1.
+**Prerequisites:** Level 1 (processes, permissions, the filesystem). You do not need root for most of this level;
+the lessons that do (LVM, OOM provocation) say so and suggest doing them in a disposable VM.
 
 ## Modules
 
-1. **[Booting & systemd Basics](01-boot-systemd.md)**: the boot relay, units, targets, ordering vs dependency.
-2. **[systemd Units, Services & Timers](02-units-timers.md)**: `Type=`, `Restart=`, sandboxing, a tested unit linter.
-3. **[Logging: journald, syslog & logrotate](03-logging-journald.md)**: why a rename-rotated log keeps growing.
-4. **[Disks, Partitions & Filesystems](04-disks-filesystems.md)**: `fstab`, UUIDs, `nofail`, a tested fstab linter.
-5. **[LVM, RAID & Storage Layers](05-lvm-raid.md)**: XOR parity rebuilt in code, and the write hole.
-6. **[Networking](06-networking-basics.md)**: CIDR math, routes, DNS, TCP states observed.
-7. **[Firewalls](07-firewalls.md)**: first-match rule evaluation and the order mistake.
-8. **[SSH: Keys, Config & Hardening](08-ssh-keys.md)**: real keys, `ssh -G`, documented sshd defaults.
-9. **[Scheduling: cron, at & Timers](09-scheduling-cron.md)**: the day-of-month OR day-of-week surprise.
-10. **[Project: A Server Hardening Linter](10-project-hardening-linter.md)**: sshd, sysctl, fstab and units checked against a baseline.
+1. **[Process States, Signals & Job Control](01-process-states-signals.md)**: running/sleeping/zombie/stopped,
+   `SIGTERM` vs `SIGKILL` vs `SIGSTOP`, and why a zombie can't be killed.
+2. **[Scheduling: Nice, Priorities & the CFS](02-scheduling-cfs.md)**: niceness vs real priority, how the Completely
+   Fair Scheduler picks the next process to run.
+3. **[Memory Management](03-memory-management.md)**: virtual address space, paging, page cache vs "free" memory, and
+   provoking the OOM killer on purpose.
+4. **[Disks & Block Devices](04-disks-lvm-filesystems.md)**: partitions, LVM physical/volume/logical groups, and
+   creating an ext4 vs xfs filesystem.
+5. **[Mounting, fstab & Network Filesystems](05-mounting-fstab-nfs.md)**: mount namespaces at a glance, `/etc/fstab`
+   fields, bind mounts, and NFS basics.
+6. **[systemd Deep Dive](06-systemd-deep-dive.md)**: units, targets, the dependency graph, and `systemd-analyze`.
+7. **[Writing systemd Services & Timers](07-systemd-services-timers.md)**: a real unit file, `Restart=`, and a timer
+   that replaces a cron job.
+8. **[Logging & journald](08-journald-logging.md)**: structured logs, `journalctl` filters, and persistent vs
+   volatile journals.
+9. **[Device Files, udev & /dev](09-device-files-udev.md)**: character vs block devices, major/minor numbers, and
+   how udev names a new device.
+10. **[Project: Diagnose a Resource-Starved System](10-project-resource-diagnosis.md)**: a script that eats memory
+    and CPU on purpose, and the diagnostic pass that finds and explains it.
 
 ## After Level 2
 
-Level 3 looks under the hood: system calls, memory, `/proc`, scheduling and load average, I/O, namespaces and cgroups, capabilities, the network stack and a performance method, ending with a `/proc` monitor.
+Level 3 goes outward: how Linux resolves a name and routes a packet, firewalls old and new, SSH's actual protocol,
+SELinux/AppArmor, and the namespaces and cgroups that containers are built from.

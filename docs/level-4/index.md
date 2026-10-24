@@ -1,30 +1,41 @@
 ---
-description: "Linux Level 4: robust scripts, backups, configuration management, troubleshooting, patching, auditing, containers and a runbook capstone."
+description: "Linux Level 4: performance tools, strace/ltrace/perf, I/O scheduling, kernel modules, /proc & /sys debugging, boot recovery, and a capstone server build."
 ---
 
-# Level 4 · Operations & Reliability
+# Level 4 · Performance, Troubleshooting & Capstone
 
-Level 4 is about running Linux machines as a responsible operator: scripts that fail safely, backups that restore, configuration that doesn't drift, a method for diagnosing faults, patching without outages, auditing for tampering and abuse, containers, and a runbook that a tired engineer can follow.
+Level 4 is what you reach for when something is wrong and you don't yet know what: the performance tools that tell
+you where time is going, the tracers that show you every syscall a process makes, the kernel module system, and
+the boot-recovery skills for when the system won't even start. It ends with a capstone that builds a server, breaks
+it on purpose, and gets it back.
 
 !!! note "What was run, and what wasn't"
-    This course was written on a Mac, so nothing here ran on Linux. Level 4 leans on things that *are* portable and were run on macOS: shell strictness experiments (bash 3.2), `tar`, `rsync` (openrsync), checksums, disk images for the df-versus-du case, sparse files, `curl` timing and exit codes, TCP connection classification, and pytest-tested Python tools (a configuration "ensure" library, a Debian version
-    comparator, a file-integrity monitor, an image layer model, a Dockerfile linter, a runbook checker). Linux-only tools (`systemctl`, `auditd`, `needrestart`, `tcpdump`, container runtimes) are described from man pages and general documentation and marked as not run. Several of my own first attempts were wrong; where a test or experiment corrected me, the lesson says so.
+    `top`, `vmstat`, `iostat`, `free`, `strace`, `perf` (where the kernel/VM supported perf events), module
+    `insmod`/`lsmod` commands, and the boot-recovery steps were run on a real Linux VM. Distro comparisons in module
+    8 and kernel release/LTS details in module 9 are documentation-based (you can't "run" a comparison of five
+    distributions) and are dated to October 2026; check current LTS status before relying on it long-term.
 
-**Prerequisites:** Levels 1 to 3.
+**Prerequisites:** Levels 1–3. The capstone assumes you're comfortable combining filesystem, process, systemd,
+network and security content from every earlier level.
 
 ## Modules
 
-1. **[Robust Shell Scripts](01-robust-shell-scripts.md)**: what `set -e`, `-u` and `pipefail` really do, tested; traps, locks, idempotence.
-2. **[Backups: tar, rsync & Restore Testing](02-backups-rsync.md)**: snapshots with `--link-dest`, the size-and-mtime trap, checksums.
-3. **[Automation & Configuration Management](03-automation-config.md)**: idempotent "ensure" operations, check mode, drift.
-4. **[A Troubleshooting Method That Works](04-troubleshooting-method.md)**: define, scope, bisect, one change at a time.
-5. **[Patching, Kernel Updates & Reboots](05-patching-kernels.md)**: backports, restarts, kernels, a tested version comparator.
-6. **[Troubleshooting Disks & Filesystems](06-storage-troubleshooting.md)**: `df` vs `du`, deleted-open files, sparse files, inodes.
-7. **[Troubleshooting the Network](07-network-troubleshooting.md)**: refused vs timeout vs reset vs DNS, curl timing, MTU.
-8. **[Security Auditing: auditd, Lynis & Logs](08-security-auditing.md)**: audit rules, log review, file integrity monitoring.
-9. **[Containers on Linux: Images, Runtimes & Limits](09-containers-on-linux.md)**: layers and whiteouts, a Dockerfile linter, PID 1.
-10. **[Capstone: A Production Runbook & Checker](10-capstone-runbook.md)**: operations as data, with a safety checker.
-
-## After the course
-
-Re-run the experiments on a real Linux VM and compare with the macOS results; wherever the two differ, you have learned something about portability.
+1. **[Performance Tools](01-performance-tools.md)**: `top`/`htop`, `vmstat`, `iostat`, `free`, and reading load
+   average correctly (it's not CPU percent).
+2. **[Tracing & Profiling](02-strace-ltrace-perf.md)**: `strace` for syscalls, `ltrace` for library calls, and
+   `perf` for sampling where CPU time actually goes.
+3. **[Filesystem Performance & I/O Scheduling](03-filesystem-performance-io.md)**: I/O schedulers, `iostat` queue
+   depth, and why a "slow disk" is sometimes a slow filesystem choice.
+4. **[Kernel Modules](04-kernel-modules.md)**: loading, unloading, and building a trivial "Hello, kernel" module.
+5. **[/proc and /sys as Debugging Tools](05-proc-sys-debugging.md)**: reading a hung process's state, open files
+   and memory map without a debugger.
+6. **[Troubleshooting Boot Failures & Recovery Mode](06-boot-failure-recovery.md)**: single-user/rescue targets,
+   a broken `fstab`, and recovering from it.
+7. **[Containers vs VMs](07-containers-vs-vms.md)**: where the namespaces/cgroups from Level 3 end and a hypervisor
+   begins.
+8. **[Linux Distros Compared](08-distros-compared.md)**: Debian/Ubuntu, RHEL/Fedora, Arch and Alpine — init systems,
+   package managers and release models.
+9. **[Kernel Versions, LTS & Staying Current](09-kernel-versions-lts.md)**: the mainline/stable/LTS split and how
+   to tell which one you're running.
+10. **[Capstone: Build, Harden & Diagnose a Linux Server From Scratch](10-capstone-server-build.md)**: provision a
+    VM, apply Level 1–3 hardening, then diagnose three injected faults.

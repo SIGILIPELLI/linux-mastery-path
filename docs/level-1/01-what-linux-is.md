@@ -1,116 +1,109 @@
 ---
-description: "What Linux actually is: the kernel, the GNU and other userland around it, how distributions differ, and how to tell what you are running."
+description: "What Linux actually is: kernel vs distro vs userland, monolithic kernel design, and the Unix philosophy that shapes every command you'll learn."
 ---
 
-# 01 · What Linux Is: Kernel, Distributions & Userland
+# 01 · What Linux Actually Is: Kernel, Distros & the Unix Philosophy
 
-"Linux" names two different things, and mixing them up causes a surprising amount of confusion. Strictly, Linux is a **kernel**: the
-program that manages the CPU, memory, devices and filesystems, and that every other program asks for services. In everyday speech
-"Linux" means a whole operating system built around that kernel, which is really a **distribution**. Knowing where the line sits
-tells you what changes when you upgrade, why two Linux machines can behave differently, and where to look when something breaks.
+If you've only ever heard "Linux" used as a single word for "the operating system on my server," the first useful
+thing to do is split it into three separate layers, because almost every confusing moment later in this course
+traces back to mixing them up.
 
-!!! note "About this course and what was run"
-    This course was written on a **Mac (macOS, Darwin)** with no Linux machine, virtual machine or container runtime available, so
-    **no command here was run on Linux**. What I did instead:
+## The three layers
 
-    - Commands that are POSIX-portable (`ls`, `chmod`, `find`, `awk`, pipes, signals, `trap`) were run on macOS, and their output
-      is shown labelled "macOS". Where macOS differs from Linux, the difference is a lesson in itself (BSD vs GNU tools).
-    - Linux-specific behaviour (`systemctl`, `ip`, `/proc`, `cgroups`, `apt`) is described from the Linux man-pages project
-      (man7.org), the kernel documentation and distribution documentation as read in October 2026, and is marked "not run".
-    - Programs that parse Linux data are tested against fixture text I wrote to match the documented format, and the fixtures are
-      labelled as hand-written.
+**The kernel** is a single program: a few tens of megabytes of compiled C code that starts running the instant the
+bootloader hands it control, and that never stops running until you shut the machine off. It is the only piece of
+software that talks directly to the CPU in privileged ("kernel") mode. Its job is narrow but absolute: schedule
+processes onto CPUs, manage memory, talk to hardware through drivers, and implement a filesystem abstraction. Every
+other program on the system — including `bash`, `systemd`, and `ls` — runs in unprivileged ("user") mode and can
+only touch hardware or other processes by asking the kernel to do it on their behalf, through a **system call**.
+"Linux" in the strictest sense is just this kernel. You can check which exact kernel build you're running with
+`uname -r`.
 
-    A cheap Linux VM, a container, or WSL on Windows lets you run everything yourself. Distribution versions and defaults change, so
-    check them against your own system.
+**The distro** (distribution) is everything built around that kernel to make it a usable operating system: a package
+manager, an init system, a standard set of directories, default configuration, and a curated set of packages. Debian,
+Ubuntu, Fedora, Arch, and Alpine all ship the *same* kernel source (with different configuration and sometimes
+different patches), but they disagree about almost everything above it — how you install software, how services
+start, whether `/bin` is a real directory or a symlink into `/usr/bin`. When someone says "Linux behaves differently
+on my machine," what's usually different is the distro, not the kernel.
 
-## Kernel, userland, distribution
+**The userland** is the actual programs you run: the shell, coreutils (`ls`, `cp`, `mv`...), compilers, editors,
+servers. Confusingly, most of the core userland on a typical Linux system comes from the **GNU** project, which is
+why old-timers insist on calling the whole stack "GNU/Linux" — the kernel is Linux, but a large share of the
+command-line tools you use every day are GNU tools, not part of the kernel at all. Alpine Linux swaps GNU's coreutils
+and C library for smaller ones (BusyBox and musl), and that single substitution is why some scripts that work
+everywhere else quietly break on Alpine (a point the Project in Level 1 and later lessons on package internals will
+come back to).
+
+## Worked example: identifying all three layers on a running machine
 
 ```text
-┌──────────────────────────────────────────────────────────────┐
-│ Applications: your service, nginx, postgres, a shell          │
-├──────────────────────────────────────────────────────────────┤
-│ Userland: libc, coreutils (ls, cp), bash, systemd, apt/dnf    │  ← packaged by a DISTRIBUTION
-├──────────────────────────────────────────────────────────────┤
-│ System-call interface (read, write, mmap, fork, ...)          │
-├──────────────────────────────────────────────────────────────┤
-│ Linux kernel: scheduler, memory manager, VFS, drivers, TCP/IP │
-├──────────────────────────────────────────────────────────────┤
-│ Hardware (or a hypervisor presenting virtual hardware)        │
-└──────────────────────────────────────────────────────────────┘
+$ uname -a
+Linux lima-linuxlab 7.0.0-34-generic #34-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:34:54 UTC 2026 aarch64 GNU/Linux
+
+$ cat /etc/os-release
+PRETTY_NAME="Ubuntu 26.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="26.04"
+VERSION="26.04.1 LTS (Resolute Raccoon)"
+ID=ubuntu
+ID_LIKE=debian
+
+$ ldd --version | head -n1
+ldd (Ubuntu GLIBC 2.43-2ubuntu2.4) 2.43
+
+$ ls -l /bin
+lrwxrwxrwx 1 root root 7 Apr 20  2026 /bin -> usr/bin
 ```
 
-- The **kernel** runs in privileged mode with direct access to hardware. Programs run in unprivileged *user space* and ask the kernel
-  for services through **system calls** (Level 3 · 01).
-- **Userland** is everything else: the C library (`glibc` on most distributions, `musl` on Alpine), the core utilities that give
-  you `ls` and `cp` (usually the GNU coreutils), a shell, an init system, and a package manager.
-- A **distribution** (Debian, Ubuntu, Fedora, RHEL and its rebuilds, Arch, Alpine, SUSE) chooses a kernel version and configuration,
-  userland packages, an installer, a package format and a release and support policy.
-
-## Why distributions differ
-
-| Aspect | Debian / Ubuntu family | Fedora / RHEL family | Alpine |
-|---|---|---|---|
-| Package format and tool | `.deb`, `apt`, `dpkg` | `.rpm`, `dnf`, `rpm` | `.apk`, `apk` |
-| C library | glibc | glibc | musl |
-| Init system | systemd | systemd | OpenRC |
-| Typical use | General servers, desktops | Enterprise servers | Small container images |
-
-That table is general knowledge, not something I verified on a running system, and it changes over time; check your distribution's
-documentation. Two practical consequences: a binary built against glibc may not run on musl-based Alpine, and the commands for the same
-job (installing a package) differ by family (Lesson 08).
-
-**Kernel versions and the long-term releases.** The kernel project publishes new versions on a regular cadence, and some are designated
-long-term support. Distributions ship a particular kernel and often backport fixes, so the version string alone doesn't tell you
-which fixes you have. Always check the distribution's security advisories, not just `uname -r`.
-
-## Finding out what you're running
-
-On a Linux machine these are the usual commands (not run here; the macOS equivalent output would not be meaningful):
-
-```bash
-uname -srm            # kernel name, release, machine architecture
-cat /etc/os-release   # distribution name and version, in a key=value file meant to be sourced
-hostnamectl           # on systemd systems: hostname, OS, kernel, virtualization
-lscpu; free -h; df -h # CPU, memory and disk summaries
-```
-
-`/etc/os-release` is a standard file whose keys (`NAME`, `ID`, `VERSION_ID`, `ID_LIKE`) scripts should use to branch on distribution
-(`ID_LIKE=debian` identifies derivatives). Parsing the free-text `/etc/issue` is fragile.
-
-On the Mac used for this course, `uname -s` prints `Darwin`, a reminder that **macOS is not Linux**. It is a BSD-derived Unix with its
-own kernel (XNU) and BSD userland. They share POSIX conventions, which is why many commands look identical, and differ in many details
-(see Lesson 06). Scripts that must run on both should stick to POSIX features and test on both.
-
-## Everything on top is replaceable
-
-Because the kernel/userland split is clean, you can swap pieces: run a container with a different distribution's userland on the host's kernel
-(the container shares the kernel; Level 3 · 06), put Alpine's musl userland in a 5 MB image, or boot the same kernel with a different init
-system. It also means a "Linux problem" can live in the kernel (a driver, the OOM killer), in userland (a library version), in the
-distribution's configuration (a default firewall) or in your application; the first step of troubleshooting is deciding which layer
-(Level 4 · 04).
+(Output above is from a real Ubuntu 26.04 LTS "Resolute Raccoon" VM used throughout this course; your own numbers
+will differ by kernel build and install date, but the layers you're reading won't.) Four commands, three layers:
+`uname -a` reports the **kernel** version (`7.0.0-34-generic`, Ubuntu's build, `aarch64` architecture).
+`/etc/os-release` identifies the **distro** (Ubuntu 26.04 LTS) — note the `ID_LIKE=debian` line, itself a clue that
+Ubuntu is a Debian derivative sharing much of its packaging approach; this file is a distro convention, not a
+kernel feature, and the kernel has no idea what distro it's running inside. `ldd --version` shows which C library
+the **userland** is linked against (glibc here, not musl — this matters because statically-linked or musl-linked
+binaries behave slightly differently around DNS resolution and locale handling). And `/bin -> usr/bin` shows a
+distro-level filesystem layout decision (the "usrmerge"): on modern Debian/Ubuntu/Fedora, `/bin`, `/sbin`, and
+`/lib` are just symlinks into their `/usr` equivalents, a cleanup that took over a decade to roll out across distros
+and still surprises people who learned Linux from an older book.
 
 ## How It Actually Works
 
-When you type `ls` in a shell, the shell (a userland program) asks the kernel to create a new process (`fork`/`clone`), then to replace
-that process's program with `/bin/ls` (`execve`). The `ls` program calls the C library, which issues system calls: `openat` to open the
-directory, `getdents64` to read entries, `write` to print to the terminal. At each call the CPU switches from user mode to kernel mode, the kernel checks
-permissions and does the work, then returns to user mode. The kernel never "runs ls"; it provides the services `ls` needs. Everything
-Linux-specific in this course follows from that picture: files, processes, permissions, networking, containers and performance tools all
-inspect or constrain what the kernel does for programs.
+The kernel's core design is **monolithic**: the scheduler, memory manager, filesystem code, network stack, and
+device drivers all run as one body of code sharing one address space in kernel mode, rather than as separate
+services that message each other (the microkernel approach used by, e.g., QNX or seL4). This is a real design
+tradeoff. A monolithic kernel is fast — a filesystem read doesn't need to hop between isolated services — but a bug
+in one driver can, in principle, crash the whole kernel, because there's no memory boundary between subsystems once
+you're inside it. Linux hedges this with **loadable kernel modules** (covered in Level 4): drivers can be compiled
+separately and loaded/unloaded at runtime without rebooting, which gives some of a microkernel's modularity without
+giving up the monolithic performance model.
+
+The boundary between kernel and userland isn't a style convention — it's enforced by the CPU itself. Modern
+processors have hardware privilege levels (x86 calls them "rings," ARM calls them "exception levels"). The kernel
+runs at the most privileged level and user programs run at a restricted one; a user program literally cannot execute
+an instruction that reconfigures memory protection or talks to a disk controller — the CPU will refuse. The *only*
+door between the two is the **syscall** instruction, which the CPU treats as a controlled, well-defined jump into
+kernel code at an address the kernel itself chose in advance. This is why `strace` (Level 4) is such a powerful tool:
+every single interaction a process has with the outside world — opening a file, reading network data, creating
+another process — is a syscall, and tracing them traces everything that program actually does to the system.
 
 ## Common mistakes
 
-- **Saying "Linux" when you mean a distribution** in a bug report. Always include distribution, version and kernel.
-- **Assuming macOS commands behave like Linux ones**, or the reverse (Lesson 06).
-- **Judging a system's patch level from the kernel version alone.** Backports make version numbers misleading.
-- **Parsing `/etc/issue` or `lsb_release` output** instead of `/etc/os-release`.
-- **Copying a binary built for glibc onto an Alpine/musl system** and being surprised it won't start.
-- **Treating containers as having their own kernel.** They share the host's.
+- **Treating "Linux" and "Ubuntu" (or any distro) as synonyms.** They aren't, and the gap matters the moment you
+  work across two distros: a command, package name, default config path, or init system can differ while the kernel
+  underneath stays conceptually the same.
+- **Assuming GNU tool behavior is universal.** Scripts relying on GNU-specific flags (`sed -i` without a backup
+  suffix, certain `date` format strings) can fail silently or differently on BusyBox/musl systems like Alpine or
+  embedded distros. If you only ever test on Ubuntu, you will eventually ship a script that breaks somewhere else.
+- **Confusing "the kernel crashed" with "a userland program crashed."** A segfaulting application is normal and
+  recoverable — the kernel killed one process and everything else keeps running. An actual kernel panic is rare,
+  system-wide, and (outside of `dmesg`/serial consoles) usually ends the session; conflating the two leads to
+  over- or under-reacting to the wrong kind of failure.
 
 ## Exercise
 
-1. On a Linux machine or VM (or WSL), run the four commands above and write down: distribution, version, kernel release, CPU count.
-2. Write a shell snippet that sources `/etc/os-release` and prints a different install command (`apt install`, `dnf install`, `apk add`)
-   depending on `$ID` and `$ID_LIKE`. Run it on macOS with a fake os-release file to test the branching logic.
-3. Find your distribution's support lifecycle page and record when your version stops receiving security updates.
-4. Explain, in three sentences, what changes for your applications when only the kernel is upgraded versus only a library.
+Predict, then run, each of these four commands on any Linux machine (a VM, WSL, or a cheap cloud instance — not
+required to be the same distro as this lesson's examples) and write down, for each, which of the three layers
+(kernel / distro / userland) it's telling you about: `uname -r`, `cat /etc/os-release`, `which bash` followed by
+`file $(which bash)`, and `ls -l /lib64` (or `/lib`, if `/lib64` doesn't exist on your system — note which one your
+distro uses, and whether it's a real directory or a symlink).

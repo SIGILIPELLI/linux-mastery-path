@@ -1,6 +1,6 @@
 ---
-title: "Free Linux Course: Filesystem, Permissions, Processes, systemd, Networking, Containers, Performance and Operations"
-description: "Free Linux course: 40 lessons on the filesystem, permissions, systemd, disks, networking, namespaces and cgroups, performance, backups and troubleshooting."
+title: "Free Linux Fundamentals Course: Kernel, Filesystem, Processes, systemd, Networking & Security Internals"
+description: "Free Linux course: 40 lessons on the kernel, filesystem/permissions, processes and memory, systemd, networking internals, namespaces/cgroups and security."
 ---
 
 # Linux Mastery Path
@@ -25,45 +25,46 @@ description: "Free Linux course: 40 lessons on the filesystem, permissions, syst
   </div>
 </div>
 
-Most Linux problems are not exotic. A disk that is "full" with no big files because a deleted log is still open. A service that works from the shell and fails under systemd. A log that keeps growing after rotation because the process holds the old file. A cron job that fires on Tuesday the 13th because of how day-of-month and day-of-week combine. A container killed with exit code 137 while the host has plenty of free memory. None
-of these are bugs. They follow from how the kernel and the tools actually work, and this course shows each one, with an experiment or a test wherever it could be run.
+Most people learn Linux as a list of commands: `chmod 755`, `systemctl restart`, `ps aux`, `iptables -A`. That gets you through a day of
+sysadmin work, but it leaves the "why" as a black box — why does a `chmod` on a directory not do what you'd guess from the file case,
+why does killing a process sometimes leave a zombie behind, why does a service that starts fine by hand fail under `systemd`, why does
+`ping` work but `curl` time out on the same host. This course is about the layer underneath the commands: the kernel data structures,
+the on-disk formats, and the OS mechanisms that make the commands behave the way they do.
 
-It assumes you can use a terminal and some basic programming. It doesn't assume any Linux administration experience.
+It's scoped deliberately narrow: **this is Linux-the-operating-system**, not Linux-the-shell-scripting-language (see
+[Shell/Bash Mastery Path](https://sigilipelli.github.io/shell-mastery-path/) for that) and not Linux-in-production (see
+[Server Ops Mastery Path](https://sigilipelli.github.io/server-ops-mastery-path/) for reverse proxies, deployments, HA and on-call).
+Here you'll find the filesystem's actual on-disk model, how permissions and processes really work under the hood, what `systemd`
+units and cgroups are doing, how the network stack resolves a name and routes a packet, and the security modules and kernel tools
+that sit underneath everyday commands.
 
-**Level 1** is the foundation: what the kernel and a distribution are, the filesystem hierarchy, inodes and links, permissions, users and `sudo`, text pipelines, processes and signals, packages and the manual, ending with a portable audit script. **Level 2** is system administration: boot and systemd, units and timers, logging, disks and filesystems, LVM and RAID, networking, firewalls, SSH and scheduling, ending
-with a hardening linter. **Level 3** is internals and performance: system calls, memory and the OOM killer, `/proc`, CPU scheduling and load, I/O, namespaces and cgroups (how containers work), capabilities, the network stack and a performance method, ending with a `/proc` monitor. **Level 4** is operations: robust scripts, backups, configuration management, troubleshooting, patching, disk and network faults, auditing, containers and a
-runbook capstone.
-
-Every lesson has a **How It Actually Works** section: why `rm` doesn't free space while a process holds the file, why `fork` of a 200 MB process takes milliseconds, why a RAID 5 parity block can rebuild one lost block but not two, why mapping 512 MB of memory changes nothing until you touch it, and why a `SYN` to a closed port gets a refusal and to a dropped one a timeout.
-
-!!! note "Read this first: what was actually run"
-    This course was written on a **Mac, with no Linux machine, virtual machine or container runtime**, so **no command here was run on Linux**, and no output is presented as coming from Linux. What I did instead, and what each lesson labels:
-
-    - **Run on macOS (POSIX-portable behaviour):** permissions and `umask`, hard and symbolic links, `find`, pipes and the core text tools, signals, zombies and orphans, `trap`, bash strict-mode experiments (macOS ships **bash 3.2**), `tar`, `rsync` (Apple's openrsync), checksums, disk images, sparse files, `curl`, real TCP sockets on loopback, SSH key tools, and the BSD-versus-GNU differences, which the
-      course treats as lessons.
-    - **Tested Python tools** with pytest suites, each run: a systemd unit linter, an `fstab` linter, a firewall evaluator, a cron-expression evaluator, a hardening linter, a Debian version comparator, a file-integrity monitor, a Dockerfile linter, a configuration "ensure" library, a `/proc` monitor and a runbook checker. They run against **fixtures I wrote in the documented formats**, labelled as hand-written, not captured from a real system.
-    - **Described, not run:** everything that needs Linux: `systemd`, `/proc`, cgroups, namespaces, `apt`/`dnf`, `nftables`, `strace`, `perf`, `auditd`, SELinux/AppArmor. These come from the Linux man-pages project (man7.org), the kernel documentation and distribution documentation as read in **October 2026**, and are marked "not run".
-
-    Where an experiment gave a result that surprised me or that I could not interpret (nice having no effect on macOS, an inconclusive cache test, a failed `F_NOCACHE` idea), the lesson says so rather than inventing a clean story. Defaults and versions change; check them on your own system. A free VM, WSL or a container lets you run everything yourself.
+It assumes basic command-line comfort (you can `cd`, `ls`, and edit a file) but no prior systems knowledge. **Every lesson that can
+run on a real Linux kernel does** — either directly (this course was written and verified on a real Linux virtual machine, not
+guessed from documentation) or noted plainly where a mechanism (a specific `systemd` target, a particular distro's package
+internals) couldn't be reproduced in the lab environment used to write it.
 
 ## How the program is organized
 
 | Level | Focus | Modules | What you can do after |
 |-------|-------|---------|------------------------|
-| **1 · Linux Foundations** | Kernel and distributions, filesystem, links, permissions, users, pipelines, processes, packages, docs | 10 | Work confidently at the command line and reason about files, users and processes |
-| **2 · System Administration** | systemd, logging, disks, LVM/RAID, networking, firewalls, SSH, scheduling | 10 | Build, secure and run a single server |
-| **3 · Internals & Performance** | Syscalls, memory, `/proc`, scheduling, I/O, namespaces/cgroups, capabilities, network stack, USE method | 10 | Explain and diagnose why a Linux system is slow or constrained |
-| **4 · Operations & Reliability** | Scripts, backups, config management, troubleshooting, patching, auditing, containers, runbooks | 10 | Operate Linux systems reliably as part of a team |
+| **1 · The Kernel, Filesystem & Permissions** | What Linux is, boot, the filesystem hierarchy, inodes, permissions, processes 101, package internals | 10 | Read any filesystem path or permission bit and know exactly what it means and why |
+| **2 · Processes, Memory & Storage** | Signals, scheduling, virtual memory, disks/LVM, mounting, systemd units/services/timers, journald, udev | 10 | Diagnose why a process is slow, stuck, or killed, and manage services correctly |
+| **3 · Networking & Security Internals** | The network stack, DNS, netfilter, sockets, SSH, SELinux/AppArmor, namespaces/cgroups, hardening | 10 | Trace a connection end-to-end and reason about an isolation or security boundary |
+| **4 · Performance, Troubleshooting & Capstone** | Tracing tools, I/O scheduling, kernel modules, `/proc`/`/sys`, boot recovery, distro/version landscape | 10 | Profile a real performance problem and bring a broken system back from a bad boot |
 
 Each level has 9 teaching modules plus a hands-on project (module 10), for **40 lessons** total.
 
 ## How to use this site
 
-- **Get a Linux machine to practise on**: a VM (VirtualBox, UTM, multipass), WSL2 on Windows, a cloud free tier, or a container. Never experiment on a server you care about.
-- **Read the "what was run" note** at the top of each lesson: it tells you whether an output was observed, modelled on fixtures, or described from documentation.
-- **Re-run the macOS experiments on Linux** and compare. The differences (GNU vs BSD tools, `/proc`, queue overflow behaviour, nice) are part of the education.
-- **Do the exercises**, especially "predict, then run".
-- **Do the projects**: each combines its level into a tested tool in the `src/` folder of the course repository.
+- **Read the "what was run" note** at the top of each lesson. Most commands in this course were executed on a real Debian/Ubuntu
+  Linux virtual machine; where a lesson relies on a mechanism that machine didn't expose (a different distro's init quirks, a kernel
+  feature needing privileges the lab didn't have), it says so instead of guessing at the output.
+- **Run the commands yourself.** Nearly everything here works unmodified on any mainstream Linux distribution, in a VM, in WSL, or on
+  a cheap cloud instance. You do not need a production server.
+- **Do the exercises**, especially the "predict, then run" ones — the gap between your prediction and the real result is where the
+  understanding is.
+- **Do the projects.** Each is a complete, runnable artifact (a root filesystem you boot, a diagnosis script, a hand-built container,
+  a hardened server you can tear down and rebuild) that ties its level together.
 
 ## More from the Mastery Path series
 
@@ -196,8 +197,8 @@ Free, structured, module-wise training across 88 other languages, platforms and 
 </div>
 <p class="mastery-grid-category">Infrastructure & Ops</p>
 <div class="mastery-grid">
-  <a href="https://sigilipelli.github.io/server-ops-mastery-path/">🖥️ Server Ops</a>
   <a href="https://sigilipelli.github.io/linux-mastery-path/">🐧 Linux</a>
+  <a href="https://sigilipelli.github.io/server-ops-mastery-path/">🖥️ Server Ops</a>
   <a href="https://sigilipelli.github.io/nodemcu-mastery-path/">📶 NodeMCU/IoT</a>
   <a href="https://sigilipelli.github.io/terraform-mastery-path/">🌍 Terraform</a>
   <a href="https://sigilipelli.github.io/kubernetes-mastery-path/">☸️ Kubernetes</a>
@@ -205,4 +206,3 @@ Free, structured, module-wise training across 88 other languages, platforms and 
   <a href="https://sigilipelli.github.io/github-mastery-path/">🐙 GitHub & Git</a>
 </div>
 </div>
-

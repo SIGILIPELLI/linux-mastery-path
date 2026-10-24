@@ -1,5 +1,5 @@
 site_name: Linux Mastery Path
-site_description: A free Linux course — the filesystem, permissions, users, processes, packages, systemd, logging, disks, networking, firewalls, container building blocks, performance and troubleshooting.
+site_description: A free Linux Fundamentals course — the kernel, filesystem and permission model, process and memory management, systemd, networking internals, namespaces/cgroups, security modules, and performance troubleshooting.
 site_url: https://sigilipelli.github.io/linux-mastery-path/
 repo_url: https://github.com/sigilipelli/linux-mastery-path
 repo_name: linux-mastery-path
@@ -59,51 +59,51 @@ nav:
   - Home: index.md
   - Privacy Policy: privacy.md
   - License: license.md
-  - "Level 1 · Linux Foundations":
+  - "Level 1 · The Kernel, Filesystem & Permissions":
       - Overview: level-1/index.md
-      - "01 · What Linux Is: Kernel, Distributions & Userland": level-1/01-what-linux-is.md
-      - "02 · The Filesystem Hierarchy & Everything Is a File": level-1/02-filesystem-hierarchy.md
-      - "03 · Files, Directories, Links & Inodes": level-1/03-files-links-inodes.md
-      - "04 · Permissions, umask, setuid & ACLs": level-1/04-permissions.md
-      - "05 · Users, Groups & sudo": level-1/05-users-groups-sudo.md
-      - "06 · Text Streams, Pipes & the Core Tools": level-1/06-text-pipelines.md
-      - "07 · Processes, Signals & Job Control": level-1/07-processes-signals.md
-      - "08 · Package Management: apt, dnf & Friends": level-1/08-package-management.md
-      - "09 · Getting Help: man, info & Reading Docs": level-1/09-getting-help.md
-      - "10 · Project — A Portable System Audit Script": level-1/10-project-portable-audit.md
-  - "Level 2 · System Administration":
+      - "01 · What Linux Actually Is: Kernel, Distros & the Unix Philosophy": level-1/01-what-linux-is.md
+      - "02 · The Boot Process: Firmware, Bootloader & initramfs": level-1/02-boot-process.md
+      - "03 · The Filesystem Hierarchy & Virtual Filesystems (/proc, /sys)": level-1/03-filesystem-hierarchy.md
+      - "04 · Files, Inodes & Links: How Linux Actually Stores Data": level-1/04-inodes-links.md
+      - "05 · Users, Groups & the Permission Model": level-1/05-users-permissions.md
+      - "06 · Advanced Permissions: SUID, SGID, Sticky Bit & ACLs": level-1/06-suid-sgid-acls.md
+      - "07 · Processes 101: PIDs, fork/exec & the Process Tree": level-1/07-processes-101.md
+      - "08 · Standard Streams, File Descriptors & Pipes": level-1/08-streams-descriptors-pipes.md
+      - "09 · Package Management Internals: dpkg/APT vs RPM/DNF": level-1/09-package-management-internals.md
+      - "10 · Project — Build and Boot a Minimal Root Filesystem": level-1/10-project-minimal-rootfs.md
+  - "Level 2 · Processes, Memory & Storage":
       - Overview: level-2/index.md
-      - "01 · Booting & systemd Basics": level-2/01-boot-systemd.md
-      - "02 · systemd Units, Services & Timers": level-2/02-units-timers.md
-      - "03 · Logging: journald, syslog & logrotate": level-2/03-logging-journald.md
-      - "04 · Disks, Partitions & Filesystems": level-2/04-disks-filesystems.md
-      - "05 · LVM, RAID & Storage Layers": level-2/05-lvm-raid.md
-      - "06 · Networking: Interfaces, Routes, DNS & ss": level-2/06-networking-basics.md
-      - "07 · Firewalls: nftables, iptables & ufw": level-2/07-firewalls.md
-      - "08 · SSH: Keys, Config & Hardening": level-2/08-ssh-keys.md
-      - "09 · Scheduling: cron, at & Timers": level-2/09-scheduling-cron.md
-      - "10 · Project — A Server Hardening Linter": level-2/10-project-hardening-linter.md
-  - "Level 3 · Internals & Performance":
+      - "01 · Process States, Signals & Job Control": level-2/01-process-states-signals.md
+      - "02 · Scheduling: Nice, Priorities & the CFS": level-2/02-scheduling-cfs.md
+      - "03 · Memory Management: Virtual Memory, Paging & the OOM Killer": level-2/03-memory-management.md
+      - "04 · Disks & Block Devices: Partitions, LVM & Filesystems": level-2/04-disks-lvm-filesystems.md
+      - "05 · Mounting, fstab & Network Filesystems": level-2/05-mounting-fstab-nfs.md
+      - "06 · systemd Deep Dive: Units, Targets & Dependencies": level-2/06-systemd-deep-dive.md
+      - "07 · Writing systemd Services & Timers": level-2/07-systemd-services-timers.md
+      - "08 · Logging & journald: Structured Logs at the OS Level": level-2/08-journald-logging.md
+      - "09 · Device Files, udev & /dev": level-2/09-device-files-udev.md
+      - "10 · Project — Diagnose a Resource-Starved System": level-2/10-project-resource-diagnosis.md
+  - "Level 3 · Networking & Security Internals":
       - Overview: level-3/index.md
-      - "01 · System Calls & the Kernel Boundary": level-3/01-syscalls-kernel.md
-      - "02 · Memory: Page Cache, Swap & the OOM Killer": level-3/02-memory-management.md
-      - "03 · /proc and /sys: The Kernel's Windows": level-3/03-proc-sys.md
-      - "04 · CPU Scheduling & Load Average": level-3/04-cpu-scheduling-load.md
-      - "05 · I/O, Block Layer & Storage Performance": level-3/05-io-storage-performance.md
-      - "06 · Namespaces & cgroups: How Containers Work": level-3/06-namespaces-cgroups.md
-      - "07 · Capabilities, SELinux & AppArmor": level-3/07-mac-capabilities.md
-      - "08 · The Network Stack: Sockets, TCP & netfilter": level-3/08-network-stack.md
-      - "09 · Performance Analysis: USE Method & Tools": level-3/09-performance-method.md
-      - "10 · Project — A /proc-Based Monitor with Tests": level-3/10-project-proc-monitor.md
-  - "Level 4 · Operations & Reliability":
+      - "01 · The Linux Network Stack: Interfaces, IP & Routing": level-3/01-network-stack-routing.md
+      - "02 · DNS Resolution on Linux: resolv.conf, nsswitch & systemd-resolved": level-3/02-dns-resolution.md
+      - "03 · Netfilter & Firewalls: iptables vs nftables": level-3/03-netfilter-iptables-nftables.md
+      - "04 · Sockets, Ports & the ss/netstat Toolset": level-3/04-sockets-ports-ss.md
+      - "05 · SSH Internals: Keys, Agents & the Protocol": level-3/05-ssh-internals.md
+      - "06 · Linux Security Modules: SELinux vs AppArmor": level-3/06-selinux-apparmor.md
+      - "07 · Namespaces & Cgroups: The Building Blocks of Containers": level-3/07-namespaces-cgroups.md
+      - "08 · Kernel Tuning: sysctl & /proc Parameters": level-3/08-sysctl-kernel-tuning.md
+      - "09 · Auditing & Hardening: auditd and fail2ban": level-3/09-auditd-fail2ban-hardening.md
+      - "10 · Project — Build a Container From Namespaces and Cgroups": level-3/10-project-mini-container.md
+  - "Level 4 · Performance, Troubleshooting & Capstone":
       - Overview: level-4/index.md
-      - "01 · Robust Shell Scripts": level-4/01-robust-shell-scripts.md
-      - "02 · Backups: tar, rsync & Restore Testing": level-4/02-backups-rsync.md
-      - "03 · Automation & Configuration Management": level-4/03-automation-config.md
-      - "04 · A Troubleshooting Method That Works": level-4/04-troubleshooting-method.md
-      - "05 · Patching, Kernel Updates & Reboots": level-4/05-patching-kernels.md
-      - "06 · Troubleshooting Disks & Filesystems": level-4/06-storage-troubleshooting.md
-      - "07 · Troubleshooting the Network": level-4/07-network-troubleshooting.md
-      - "08 · Security Auditing: auditd, Lynis & Logs": level-4/08-security-auditing.md
-      - "09 · Containers on Linux: Images, Runtimes & Limits": level-4/09-containers-on-linux.md
-      - "10 · Capstone — A Production Runbook & Checker": level-4/10-capstone-runbook.md
+      - "01 · Performance Tools: top, vmstat, iostat & free Explained": level-4/01-performance-tools.md
+      - "02 · Tracing & Profiling: strace, ltrace & perf": level-4/02-strace-ltrace-perf.md
+      - "03 · Filesystem Performance & I/O Scheduling": level-4/03-filesystem-performance-io.md
+      - "04 · Kernel Modules: Loading, Building & Debugging": level-4/04-kernel-modules.md
+      - "05 · /proc and /sys as Debugging Tools": level-4/05-proc-sys-debugging.md
+      - "06 · Troubleshooting Boot Failures & Recovery Mode": level-4/06-boot-failure-recovery.md
+      - "07 · Containers vs VMs: Where OS Fundamentals End and Virtualization Begins": level-4/07-containers-vs-vms.md
+      - "08 · Linux Distros Compared: Debian, RHEL, Arch & Alpine": level-4/08-distros-compared.md
+      - "09 · Kernel Versions, LTS & Staying Current": level-4/09-kernel-versions-lts.md
+      - "10 · Capstone — Build, Harden & Diagnose a Linux Server From Scratch": level-4/10-capstone-server-build.md

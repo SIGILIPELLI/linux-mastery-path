@@ -1,12 +1,12 @@
 ---
-description: "Privacy policy for Linux Mastery Path: how Google AdSense cookies work here, what the site does not collect, and how to opt out."
+description: "Privacy policy for Databricks Mastery Path: how Google AdSense cookies work here, what the site does not collect, and how to opt out."
 ---
 
 # Privacy Policy
 
 _Last updated: 2026-07-17_
 
-This site ("Linux Mastery Path") uses **Google AdSense** to display advertising.
+This site ("Databricks Mastery Path") uses **Google AdSense** to display advertising.
 
 ## Cookies & data collection
 
@@ -29,5 +29,5 @@ described above.
 ## Contact
 
 Questions about this policy can be directed via the
-[GitHub repository](https://github.com/SIGILIPELLI/linux-mastery-path) for this
+[GitHub repository](https://github.com/SIGILIPELLI/databricks-mastery-path) for this
 site.
