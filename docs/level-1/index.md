@@ -20,7 +20,7 @@ from documentation.
 
 **Prerequisites:** comfort typing commands in a terminal (`cd`, `ls`, editing a file). No prior Linux internals
 knowledge assumed. If you want the shell scripting language itself — variables, loops, `sed`/`awk` — that's the
-[Shell/Bash Mastery Path](https://sigilipelli.github.io/shell-mastery-path/); this course treats the shell only as
+[Shell/Bash Mastery Path](https://learnmasterypath.com/shell-mastery-path/); this course treats the shell only as
 the window you're typing commands into.
 
 ## Modules

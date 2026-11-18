@@ -1,6 +1,6 @@
 site_name: Linux Mastery Path
 site_description: A free Linux Fundamentals course — the kernel, filesystem and permission model, process and memory management, systemd, networking internals, namespaces/cgroups, security modules, and performance troubleshooting.
-site_url: https://sigilipelli.github.io/linux-mastery-path/
+site_url: https://learnmasterypath.com/linux-mastery-path/
 repo_url: https://github.com/sigilipelli/linux-mastery-path
 repo_name: linux-mastery-path
 
