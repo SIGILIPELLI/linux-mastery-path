@@ -83,7 +83,7 @@ not_in_nav: |
 
 nav:
   - Home: index.md
-  - "💼 Interview Questions": interview-questions.md
+  - Interview Questions: interview-questions.md
   - "Level 1 · The Kernel, Filesystem & Permissions":
       - Overview: level-1/index.md
       - "01 · What Linux Actually Is: Kernel, Distros & the Unix Philosophy": level-1/01-what-linux-is.md
@@ -132,5 +132,5 @@ nav:
       - "08 · Linux Distros Compared: Debian, RHEL, Arch & Alpine": level-4/08-distros-compared.md
       - "09 · Kernel Versions, LTS & Staying Current": level-4/09-kernel-versions-lts.md
       - "10 · Capstone — Build, Harden & Diagnose a Linux Server From Scratch": level-4/10-capstone-server-build.md
-  - "🎯 Final Quiz": quiz.md
+  - Final Quiz: quiz.md
 
