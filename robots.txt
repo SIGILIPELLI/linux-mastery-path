@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://learnmasterypath.com/linux-mastery-path/sitemap.xml

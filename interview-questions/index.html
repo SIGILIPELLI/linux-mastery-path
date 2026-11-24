@@ -1,0 +1,4097 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="178 Linux interview questions with answers and explanations, from beginner to advanced, organised by level. Free, from the Linux Mastery Path.">
+      
+      
+      
+        <link rel="canonical" href="https://learnmasterypath.com/linux-mastery-path/interview-questions/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../level-1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+  
+  <title>Linux Interview Questions and Answers (178 Questions)</title>
+
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/progress-tracker.css">
+    
+      <link rel="stylesheet" href="../stylesheets/final-quiz.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-05VBGCXN12"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-05VBGCXN12');
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mastery Path">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Linux Interview Questions and Answers (178 Questions)">
+  <meta property="og:description" content="178 Linux interview questions with answers and explanations, from beginner to advanced, organised by level. Free, from the Linux Mastery Path.">
+  <meta property="og:url" content="https://learnmasterypath.com/linux-mastery-path/interview-questions/">
+  <meta property="og:image" content="https://learnmasterypath.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mastery Path: free structured courses, beginner to master">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Linux Interview Questions and Answers (178 Questions)">
+  <meta name="twitter:description" content="178 Linux interview questions with answers and explanations, from beginner to advanced, organised by level. Free, from the Linux Mastery Path.">
+  <meta name="twitter:image" content="https://learnmasterypath.com/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9440969811959397"
+     crossorigin="anonymous"></script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Mastery Path", "item": "https://learnmasterypath.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Linux Mastery Path", "item": "https://learnmasterypath.com/linux-mastery-path/"},
+      {"@type": "ListItem", "position": 3, "name": "Interview Questions", "item": "https://learnmasterypath.com/linux-mastery-path/interview-questions/"}
+    ]
+  }
+  </script>
+  <style>
+    .md-banner a:hover { text-decoration: underline !important; }
+    .mp-related { margin-top: 2.4rem; padding-top: 1rem; border-top: 1px solid var(--md-default-fg-color--lightest); font-size: .78rem; }
+    .mp-related h2 { font-size: .9rem; margin: 0 0 .5rem; }
+    .mp-related ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem .9rem; }
+    .mp-related li { margin: 0 !important; }
+  </style>
+  <script type="application/json" id="mp-course-meta">{"home": false, "id": "linux-mastery-path", "name": "Linux Mastery Path", "repo": "https://github.com/sigilipelli/linux-mastery-path", "src": "interview-questions.md", "url": "https://learnmasterypath.com/linux-mastery-path/"}</script>
+  <link rel="stylesheet" href="https://learnmasterypath.com/assets/learn.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://learnmasterypath.com/assets/course.css?v=1">
+  <script src="https://learnmasterypath.com/assets/learn.js" defer></script>
+  <script src="https://learnmasterypath.com/assets/signup.js" defer></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linux-interview-questions-and-answers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <a href="https://learnmasterypath.com/" style="color: inherit; text-decoration: none;">
+    &larr; Mastery Path &middot; all 100+ free courses
+  </a>
+  <span style="opacity: .6; margin: 0 .6em;">|</span>
+  <a href="https://learnmasterypath.com/search/" style="color: inherit; text-decoration: none;">Search all courses</a>
+  <span style="opacity: .6; margin: 0 .6em;">|</span>
+  <a href="https://learnmasterypath.com/resume/" style="color: inherit; font-weight: 700; text-decoration: none;">
+    Got the skills? Free resume ATS check &rarr;
+  </a>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Linux Mastery Path" class="md-header__button md-logo" aria-label="Linux Mastery Path" data-md-component="logo">
+      <svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linux Mastery Path
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linux Interview Questions and Answers (178 Questions)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sigilipelli/linux-mastery-path" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    linux-mastery-path
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Interview Questions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 1 · The Kernel, Filesystem & Permissions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-2/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 2 · Processes, Memory & Storage
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 3 · Networking & Security Internals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-4/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 4 · Performance, Troubleshooting & Capstone
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../quiz/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Final Quiz
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linux Mastery Path" class="md-nav__button md-logo" aria-label="Linux Mastery Path" data-md-component="logo">
+      <svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg>
+    </a>
+    Linux Mastery Path
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sigilipelli/linux-mastery-path" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    linux-mastery-path
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Questions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-the-kernel-filesystem-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 · The Kernel, Filesystem &amp; Permissions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 1 · The Kernel, Filesystem &amp; Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-what-linux-actually-is-kernel-distros-the-unix-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · What Linux Actually Is: Kernel, Distros &amp; the Unix Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-the-boot-process-firmware-bootloader-initramfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · The Boot Process: Firmware, Bootloader &amp; initramfs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-the-filesystem-hierarchy-virtual-filesystems-proc-sys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · The Filesystem Hierarchy &amp; Virtual Filesystems (/proc, /sys)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-files-inodes-links-how-linux-actually-stores-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Files, Inodes &amp; Links: How Linux Actually Stores Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-users-groups-the-permission-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Users, Groups &amp; the Permission Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-advanced-permissions-suid-sgid-sticky-bit-acls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Advanced Permissions: SUID, SGID, Sticky Bit &amp; ACLs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-processes-101-pids-forkexec-the-process-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Processes 101: PIDs, fork/exec &amp; the Process Tree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-standard-streams-file-descriptors-pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Standard Streams, File Descriptors &amp; Pipes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-package-management-internals-dpkgapt-vs-rpmdnf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Package Management Internals: dpkg/APT vs RPM/DNF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-build-and-boot-a-minimal-root-filesystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project: Build and Boot a Minimal Root Filesystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-processes-memory-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 · Processes, Memory &amp; Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2 · Processes, Memory &amp; Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-process-states-signals-job-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Process States, Signals &amp; Job Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-scheduling-nice-priorities-the-cfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Scheduling: Nice, Priorities &amp; the CFS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-memory-management-virtual-memory-paging-the-oom-killer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Memory Management: Virtual Memory, Paging &amp; the OOM Killer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-disks-block-devices-partitions-lvm-filesystems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Disks &amp; Block Devices: Partitions, LVM &amp; Filesystems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-mounting-fstab-network-filesystems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Mounting, fstab &amp; Network Filesystems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-systemd-deep-dive-units-targets-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · systemd Deep Dive: Units, Targets &amp; Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-writing-systemd-services-timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Writing systemd Services &amp; Timers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-logging-journald-structured-logs-at-the-os-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Logging &amp; journald: Structured Logs at the OS Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-device-files-udev-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Device Files, udev &amp; /dev
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-diagnose-a-resource-starved-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project: Diagnose a Resource-Starved System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-networking-security-internals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 · Networking &amp; Security Internals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 3 · Networking &amp; Security Internals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-the-linux-network-stack-interfaces-ip-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · The Linux Network Stack: Interfaces, IP &amp; Routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-dns-resolution-on-linux-resolvconf-nsswitch-systemd-resolved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · DNS Resolution on Linux: resolv.conf, nsswitch &amp; systemd-resolved
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-netfilter-firewalls-iptables-vs-nftables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Netfilter &amp; Firewalls: iptables vs nftables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-sockets-ports-the-ssnetstat-toolset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Sockets, Ports &amp; the ss/netstat Toolset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-ssh-internals-keys-agents-the-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · SSH Internals: Keys, Agents &amp; the Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-linux-security-modules-selinux-vs-apparmor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Linux Security Modules: SELinux vs AppArmor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-namespaces-cgroups-the-building-blocks-of-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Namespaces &amp; Cgroups: The Building Blocks of Containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-kernel-tuning-sysctl-proc-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Kernel Tuning: sysctl &amp; /proc Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-auditing-hardening-auditd-and-fail2ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Auditing &amp; Hardening: auditd and fail2ban
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-build-a-container-from-namespaces-and-cgroups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project: Build a Container From Namespaces and Cgroups
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-performance-troubleshooting-capstone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 · Performance, Troubleshooting &amp; Capstone
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 4 · Performance, Troubleshooting &amp; Capstone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-performance-tools-top-vmstat-iostat-free-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Performance Tools: top, vmstat, iostat &amp; free Explained
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-tracing-profiling-strace-ltrace-perf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Tracing &amp; Profiling: strace, ltrace &amp; perf
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-filesystem-performance-io-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Filesystem Performance &amp; I/O Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-kernel-modules-loading-building-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Kernel Modules: Loading, Building &amp; Debugging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-proc-and-sys-as-debugging-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · /proc and /sys as Debugging Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-troubleshooting-boot-failures-recovery-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Troubleshooting Boot Failures &amp; Recovery Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-containers-vs-vms-where-os-fundamentals-end-and-virtualization-begins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Containers vs VMs: Where OS Fundamentals End and Virtualization Begins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-linux-distros-compared-debian-rhel-arch-alpine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Linux Distros Compared: Debian, RHEL, Arch &amp; Alpine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-kernel-versions-lts-staying-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Kernel Versions, LTS &amp; Staying Current
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-capstone-build-harden-diagnose-a-linux-server-from-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Capstone: Build, Harden &amp; Diagnose a Linux Server From Scratch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixed-questions-across-all-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed questions across all levels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-coding-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical coding questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical coding questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redirection-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirection order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-link-versus-symlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard link versus symlink
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 1 · The Kernel, Filesystem & Permissions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 1 · The Kernel, Filesystem & Permissions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/01-what-linux-is/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · What Linux Actually Is: Kernel, Distros & the Unix Philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/02-boot-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · The Boot Process: Firmware, Bootloader & initramfs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/03-filesystem-hierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · The Filesystem Hierarchy & Virtual Filesystems (/proc, /sys)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/04-inodes-links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Files, Inodes & Links: How Linux Actually Stores Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/05-users-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Users, Groups & the Permission Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/06-suid-sgid-acls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Advanced Permissions: SUID, SGID, Sticky Bit & ACLs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/07-processes-101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Processes 101: PIDs, fork/exec & the Process Tree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/08-streams-descriptors-pipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Standard Streams, File Descriptors & Pipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/09-package-management-internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Package Management Internals: dpkg/APT vs RPM/DNF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/10-project-minimal-rootfs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Build and Boot a Minimal Root Filesystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 2 · Processes, Memory & Storage
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 2 · Processes, Memory & Storage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/01-process-states-signals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Process States, Signals & Job Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/02-scheduling-cfs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Scheduling: Nice, Priorities & the CFS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/03-memory-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Memory Management: Virtual Memory, Paging & the OOM Killer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/04-disks-lvm-filesystems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Disks & Block Devices: Partitions, LVM & Filesystems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/05-mounting-fstab-nfs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Mounting, fstab & Network Filesystems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/06-systemd-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · systemd Deep Dive: Units, Targets & Dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/07-systemd-services-timers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Writing systemd Services & Timers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/08-journald-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Logging & journald: Structured Logs at the OS Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/09-device-files-udev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Device Files, udev & /dev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/10-project-resource-diagnosis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Diagnose a Resource-Starved System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 3 · Networking & Security Internals
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 3 · Networking & Security Internals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/01-network-stack-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · The Linux Network Stack: Interfaces, IP & Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/02-dns-resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · DNS Resolution on Linux: resolv.conf, nsswitch & systemd-resolved
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/03-netfilter-iptables-nftables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Netfilter & Firewalls: iptables vs nftables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/04-sockets-ports-ss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Sockets, Ports & the ss/netstat Toolset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/05-ssh-internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · SSH Internals: Keys, Agents & the Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/06-selinux-apparmor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Linux Security Modules: SELinux vs AppArmor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/07-namespaces-cgroups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Namespaces & Cgroups: The Building Blocks of Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/08-sysctl-kernel-tuning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Kernel Tuning: sysctl & /proc Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/09-auditd-fail2ban-hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Auditing & Hardening: auditd and fail2ban
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/10-project-mini-container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Build a Container From Namespaces and Cgroups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 4 · Performance, Troubleshooting & Capstone
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 4 · Performance, Troubleshooting & Capstone
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/01-performance-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Performance Tools: top, vmstat, iostat & free Explained
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/02-strace-ltrace-perf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Tracing & Profiling: strace, ltrace & perf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/03-filesystem-performance-io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Filesystem Performance & I/O Scheduling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/04-kernel-modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Kernel Modules: Loading, Building & Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/05-proc-sys-debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · /proc and /sys as Debugging Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/06-boot-failure-recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Troubleshooting Boot Failures & Recovery Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/07-containers-vs-vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Containers vs VMs: Where OS Fundamentals End and Virtualization Begins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/08-distros-compared/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Linux Distros Compared: Debian, RHEL, Arch & Alpine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/09-kernel-versions-lts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Kernel Versions, LTS & Staying Current
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/10-capstone-server-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Capstone — Build, Harden & Diagnose a Linux Server From Scratch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-the-kernel-filesystem-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 · The Kernel, Filesystem &amp; Permissions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 1 · The Kernel, Filesystem &amp; Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-what-linux-actually-is-kernel-distros-the-unix-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · What Linux Actually Is: Kernel, Distros &amp; the Unix Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-the-boot-process-firmware-bootloader-initramfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · The Boot Process: Firmware, Bootloader &amp; initramfs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-the-filesystem-hierarchy-virtual-filesystems-proc-sys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · The Filesystem Hierarchy &amp; Virtual Filesystems (/proc, /sys)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-files-inodes-links-how-linux-actually-stores-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Files, Inodes &amp; Links: How Linux Actually Stores Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-users-groups-the-permission-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Users, Groups &amp; the Permission Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-advanced-permissions-suid-sgid-sticky-bit-acls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Advanced Permissions: SUID, SGID, Sticky Bit &amp; ACLs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-processes-101-pids-forkexec-the-process-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Processes 101: PIDs, fork/exec &amp; the Process Tree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-standard-streams-file-descriptors-pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Standard Streams, File Descriptors &amp; Pipes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-package-management-internals-dpkgapt-vs-rpmdnf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Package Management Internals: dpkg/APT vs RPM/DNF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-build-and-boot-a-minimal-root-filesystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project: Build and Boot a Minimal Root Filesystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-processes-memory-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 · Processes, Memory &amp; Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2 · Processes, Memory &amp; Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-process-states-signals-job-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Process States, Signals &amp; Job Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-scheduling-nice-priorities-the-cfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Scheduling: Nice, Priorities &amp; the CFS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-memory-management-virtual-memory-paging-the-oom-killer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Memory Management: Virtual Memory, Paging &amp; the OOM Killer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-disks-block-devices-partitions-lvm-filesystems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Disks &amp; Block Devices: Partitions, LVM &amp; Filesystems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-mounting-fstab-network-filesystems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Mounting, fstab &amp; Network Filesystems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-systemd-deep-dive-units-targets-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · systemd Deep Dive: Units, Targets &amp; Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-writing-systemd-services-timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Writing systemd Services &amp; Timers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-logging-journald-structured-logs-at-the-os-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Logging &amp; journald: Structured Logs at the OS Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-device-files-udev-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Device Files, udev &amp; /dev
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-diagnose-a-resource-starved-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project: Diagnose a Resource-Starved System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-networking-security-internals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 · Networking &amp; Security Internals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 3 · Networking &amp; Security Internals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-the-linux-network-stack-interfaces-ip-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · The Linux Network Stack: Interfaces, IP &amp; Routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-dns-resolution-on-linux-resolvconf-nsswitch-systemd-resolved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · DNS Resolution on Linux: resolv.conf, nsswitch &amp; systemd-resolved
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-netfilter-firewalls-iptables-vs-nftables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Netfilter &amp; Firewalls: iptables vs nftables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-sockets-ports-the-ssnetstat-toolset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Sockets, Ports &amp; the ss/netstat Toolset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-ssh-internals-keys-agents-the-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · SSH Internals: Keys, Agents &amp; the Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-linux-security-modules-selinux-vs-apparmor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Linux Security Modules: SELinux vs AppArmor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-namespaces-cgroups-the-building-blocks-of-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Namespaces &amp; Cgroups: The Building Blocks of Containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-kernel-tuning-sysctl-proc-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Kernel Tuning: sysctl &amp; /proc Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-auditing-hardening-auditd-and-fail2ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Auditing &amp; Hardening: auditd and fail2ban
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-build-a-container-from-namespaces-and-cgroups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project: Build a Container From Namespaces and Cgroups
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-performance-troubleshooting-capstone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 · Performance, Troubleshooting &amp; Capstone
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 4 · Performance, Troubleshooting &amp; Capstone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-performance-tools-top-vmstat-iostat-free-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Performance Tools: top, vmstat, iostat &amp; free Explained
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-tracing-profiling-strace-ltrace-perf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Tracing &amp; Profiling: strace, ltrace &amp; perf
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-filesystem-performance-io-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Filesystem Performance &amp; I/O Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-kernel-modules-loading-building-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Kernel Modules: Loading, Building &amp; Debugging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-proc-and-sys-as-debugging-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · /proc and /sys as Debugging Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-troubleshooting-boot-failures-recovery-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Troubleshooting Boot Failures &amp; Recovery Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-containers-vs-vms-where-os-fundamentals-end-and-virtualization-begins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Containers vs VMs: Where OS Fundamentals End and Virtualization Begins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-linux-distros-compared-debian-rhel-arch-alpine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Linux Distros Compared: Debian, RHEL, Arch &amp; Alpine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-kernel-versions-lts-staying-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Kernel Versions, LTS &amp; Staying Current
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-capstone-build-harden-diagnose-a-linux-server-from-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Capstone: Build, Harden &amp; Diagnose a Linux Server From Scratch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixed-questions-across-all-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed questions across all levels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-coding-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical coding questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical coding questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redirection-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirection order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-link-versus-symlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard link versus symlink
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+  
+  
+
+
+<h1 id="linux-interview-questions-and-answers">Linux Interview Questions and Answers<a class="headerlink" href="#linux-interview-questions-and-answers" title="Permanent link">&para;</a></h1>
+<p><strong>178 questions</strong> with the correct answer and a short explanation, organised from beginner (Level 1) to advanced (Level 4). Every question comes from a lesson in the free Linux Mastery Path, so you can open the lesson to go deeper.</p>
+<div class="admonition tip">
+<p class="admonition-title">Practise, don't just read</p>
+<p>Each lesson also ends with an interactive quiz, and the <a href="../quiz/">final quiz</a> tests all four levels. Try to answer each question below before reading the answer.</p>
+</div>
+<h2 id="level-1-the-kernel-filesystem-permissions">Level 1 · The Kernel, Filesystem &amp; Permissions<a class="headerlink" href="#level-1-the-kernel-filesystem-permissions" title="Permanent link">&para;</a></h2>
+<h3 id="01-what-linux-actually-is-kernel-distros-the-unix-philosophy"><a href="../level-1/01-what-linux-is/">01 · What Linux Actually Is: Kernel, Distros &amp; the Unix Philosophy</a><a class="headerlink" href="#01-what-linux-actually-is-kernel-distros-the-unix-philosophy" title="Permanent link">&para;</a></h3>
+<p><strong>Q1.</strong> What is "Linux" in the strictest sense?</p>
+<p><strong>Answer:</strong> The kernel only</p>
+<p>The kernel is a single program that schedules processes, manages memory, talks to hardware and implements the filesystem abstraction. <code>uname -r</code> shows the kernel build.</p>
+<p><strong>Q2.</strong> What does a distro (distribution) add around the kernel?</p>
+<p><strong>Answer:</strong> A package manager, init system, standard directories, default config and curated packages</p>
+<p>Debian, Ubuntu, Fedora, Arch and Alpine ship the same kernel source but differ above it.</p>
+<p><strong>Q3.</strong> How do ordinary programs like bash or ls touch hardware?</p>
+<p><strong>Answer:</strong> By asking the kernel through a system call, since they run in unprivileged user mode</p>
+<p>Only the kernel runs in privileged mode.</p>
+<p><strong>Q4.</strong> Why can some scripts that work elsewhere break on Alpine?</p>
+<p><strong>Answer:</strong> It swaps GNU coreutils and glibc for BusyBox and musl</p>
+<p>That substitution changes behaviour of some tools and libraries.</p>
+<h3 id="02-the-boot-process-firmware-bootloader-initramfs"><a href="../level-1/02-boot-process/">02 · The Boot Process: Firmware, Bootloader &amp; initramfs</a><a class="headerlink" href="#02-the-boot-process-firmware-bootloader-initramfs" title="Permanent link">&para;</a></h3>
+<p><strong>Q5.</strong> What is the order of boot stages?</p>
+<p><strong>Answer:</strong> Firmware, bootloader, kernel, initramfs, switch_root to systemd (PID 1)</p>
+<p>Each stage fails in a recognizable way.</p>
+<p><strong>Q6.</strong> What is initramfs?</p>
+<p><strong>Answer:</strong> A temporary root filesystem in RAM with just enough tools (udev, disk/RAID/LUKS drivers) to find and mount the real root</p>
+<p>The real root may be on an encrypted LVM volume.</p>
+<p><strong>Q7.</strong> What does UEFI read boot entries from?</p>
+<p><strong>Answer:</strong> An EFI System Partition (a small FAT32 partition)</p>
+<p>Legacy BIOS scanned a disk's first sector.</p>
+<p><strong>Q8.</strong> What does switch_root do?</p>
+<p><strong>Answer:</strong> Replaces the initramfs root with the real root filesystem and execs the init system as PID 1</p>
+<p>On most modern distros that's systemd.</p>
+<h3 id="03-the-filesystem-hierarchy-virtual-filesystems-proc-sys"><a href="../level-1/03-filesystem-hierarchy/">03 · The Filesystem Hierarchy &amp; Virtual Filesystems (/proc, /sys)</a><a class="headerlink" href="#03-the-filesystem-hierarchy-virtual-filesystems-proc-sys" title="Permanent link">&para;</a></h3>
+<p><strong>Q9.</strong> Where is system-wide configuration usually found?</p>
+<p><strong>Answer:</strong> /etc, almost always plain text</p>
+<p>If you're hunting for where X is configured, start in /etc.</p>
+<p><strong>Q10.</strong> What belongs in /var?</p>
+<p><strong>Answer:</strong> Data that changes while the system runs: logs, caches, spool files</p>
+<p>For example /var/log and /var/cache.</p>
+<p><strong>Q11.</strong> What are /proc and /sys?</p>
+<p><strong>Answer:</strong> Virtual filesystems, not files on disk</p>
+<p><code>stat -f /proc</code> reports Type: proc with zero blocks.</p>
+<p><strong>Q12.</strong> Why is /root kept separate from /home?</p>
+<p><strong>Answer:</strong> So the superuser's home is never accidentally on a separate, possibly-unavailable mount</p>
+<p>/home holds regular users' directories.</p>
+<h3 id="04-files-inodes-links-how-linux-actually-stores-data"><a href="../level-1/04-inodes-links/">04 · Files, Inodes &amp; Links: How Linux Actually Stores Data</a><a class="headerlink" href="#04-files-inodes-links-how-linux-actually-stores-data" title="Permanent link">&para;</a></h3>
+<p><strong>Q13.</strong> What does an inode NOT store?</p>
+<p><strong>Answer:</strong> The filename</p>
+<p>The name lives in a directory entry, a (filename, inode number) pair in the parent directory.</p>
+<p><strong>Q14.</strong> After <code>ln original.txt hardlink.txt</code>, how do the two relate?</p>
+<p><strong>Answer:</strong> Two names for the same inode, and stat shows Links: 2</p>
+<p>ls -i shows the same inode number, 135 in the lesson.</p>
+<p><strong>Q15.</strong> What happens to a symlink if you delete its target?</p>
+<p><strong>Answer:</strong> It breaks: cat gives 'No such file or directory'</p>
+<p>A symlink is a separate tiny file whose content is just a path.</p>
+<p><strong>Q16.</strong> After rm original.txt, does cat hardlink.txt still work?</p>
+<p><strong>Answer:</strong> Yes, because the inode survives while another link exists</p>
+<p>The data is freed when the link count reaches zero (and no process has it open).</p>
+<h3 id="05-users-groups-the-permission-model"><a href="../level-1/05-users-permissions/">05 · Users, Groups &amp; the Permission Model</a><a class="headerlink" href="#05-users-groups-the-permission-model" title="Permanent link">&para;</a></h3>
+<p><strong>Q17.</strong> Does the kernel know usernames?</p>
+<p><strong>Answer:</strong> No: it checks numeric UIDs/GIDs, and /etc/passwd and /etc/group are just lookup tables for humans</p>
+<p>If a user is deleted while their UID still owns files, ls -l shows the bare number.</p>
+<p><strong>Q18.</strong> In which order does the kernel check permission classes, and what happens at the first match?</p>
+<p><strong>Answer:</strong> Owner, then group, then other; it stops at the first match</p>
+<p>So an owner with a more restrictive owner row than 'other' still gets only the owner row.</p>
+<p><strong>Q19.</strong> In the lesson, with mode 311 (-wx--x--x) on a directory, what works for its owner?</p>
+<p><strong>Answer:</strong> cat project/notes.txt works, but ls project is denied, because there's no read bit</p>
+<p>Read on a directory allows listing names; execute allows traversing into it.</p>
+<p><strong>Q20.</strong> What does execute (x) mean on a directory?</p>
+<p><strong>Answer:</strong> Permission to traverse it (access entries by name)</p>
+<p>Listing requires read (r).</p>
+<h3 id="06-advanced-permissions-suid-sgid-sticky-bit-acls"><a href="../level-1/06-suid-sgid-acls/">06 · Advanced Permissions: SUID, SGID, Sticky Bit &amp; ACLs</a><a class="headerlink" href="#06-advanced-permissions-suid-sgid-sticky-bit-acls" title="Permanent link">&para;</a></h3>
+<p><strong>Q21.</strong> Why can an unprivileged user run /usr/bin/passwd and update /etc/shadow?</p>
+<p><strong>Answer:</strong> It's owned by root with the SUID bit, so it runs with the owner's UID</p>
+<p>The <code>s</code> in -rwsr-xr-x marks SUID.</p>
+<p><strong>Q22.</strong> What does SGID on a directory do?</p>
+<p><strong>Answer:</strong> New files inside inherit the directory's group instead of the creator's primary group</p>
+<p>The standard way to make a shared team directory.</p>
+<p><strong>Q23.</strong> What does the sticky bit (t) do on a directory like /tmp?</p>
+<p><strong>Answer:</strong> Only a file's owner can delete or rename it, regardless of write permission on the directory</p>
+<p>/tmp is drwxrwxrwt.</p>
+<p><strong>Q24.</strong> What is mode 2775 on team-shared (after chgrp testeng)?</p>
+<p><strong>Answer:</strong> rwxrwsr-x with SGID, so files created there get group testeng</p>
+<p>The lesson's touch team-shared/report2.txt shows group testeng.</p>
+<h3 id="07-processes-101-pids-forkexec-the-process-tree"><a href="../level-1/07-processes-101/">07 · Processes 101: PIDs, fork/exec &amp; the Process Tree</a><a class="headerlink" href="#07-processes-101-pids-forkexec-the-process-tree" title="Permanent link">&para;</a></h3>
+<p><strong>Q25.</strong> What do fork() and exec() each do?</p>
+<p><strong>Answer:</strong> fork copies the calling process (new PID); exec replaces the program in the same PID</p>
+<p>The shell uses fork then exec to start every command.</p>
+<p><strong>Q26.</strong> What values does fork() return?</p>
+<p><strong>Answer:</strong> 0 to the child, and the child's PID to the parent</p>
+<p>This tells the two processes apart.</p>
+<p><strong>Q27.</strong> What is special about PID 1?</p>
+<p><strong>Answer:</strong> It's the one process the kernel starts directly during boot (systemd), with PPID 0, and everything else descends from it</p>
+<p>Losing it is fatal.</p>
+<p><strong>Q28.</strong> Why do kernel worker threads like kworker appear in brackets in ps?</p>
+<p><strong>Answer:</strong> They're created by the kernel (children of kthreadd, PID 2), not by fork/exec from userspace, and have no real command line</p>
+<p>ps -ef --forest draws the tree by PPID.</p>
+<h3 id="08-standard-streams-file-descriptors-pipes"><a href="../level-1/08-streams-descriptors-pipes/">08 · Standard Streams, File Descriptors &amp; Pipes</a><a class="headerlink" href="#08-standard-streams-file-descriptors-pipes" title="Permanent link">&para;</a></h3>
+<p><strong>Q29.</strong> What are file descriptors 0, 1 and 2 by convention?</p>
+<p><strong>Answer:</strong> stdin, stdout and stderr</p>
+<p>It's a convention the kernel doesn't enforce.</p>
+<p><strong>Q30.</strong> What does <code>cmd &gt; file 2&gt;&amp;1</code> do?</p>
+<p><strong>Answer:</strong> Points fd 1 at the file, then fd 2 at wherever fd 1 now points, so both go to the file</p>
+<p>The lesson's first ls /nonexistent wrote the error into cmd.log.</p>
+<p><strong>Q31.</strong> What does <code>cmd 2&gt;&amp;1 &gt; file</code> do?</p>
+<p><strong>Answer:</strong> stderr goes to where stdout pointed (the terminal) first, then stdout goes to the file, so errors still print to the terminal</p>
+<p>Order matters: the second run left cmd2.log empty.</p>
+<p><strong>Q32.</strong> How can you inspect a process's open descriptors?</p>
+<p><strong>Answer:</strong> ls -l /proc/&lt;pid&gt;/fd, a directory of symlinks, one per descriptor</p>
+<p>fd 0 pointed to /dev/null in the example.</p>
+<h3 id="09-package-management-internals-dpkgapt-vs-rpmdnf"><a href="../level-1/09-package-management-internals/">09 · Package Management Internals: dpkg/APT vs RPM/DNF</a><a class="headerlink" href="#09-package-management-internals-dpkgapt-vs-rpmdnf" title="Permanent link">&para;</a></h3>
+<p><strong>Q33.</strong> What is the difference between dpkg and APT?</p>
+<p><strong>Answer:</strong> dpkg installs .deb files and keeps the on-disk database but resolves nothing; APT fetches from repositories and resolves dependency graphs, then hands installation to dpkg</p>
+<p>rpm and DNF split the same way for the Red Hat lineage.</p>
+<p><strong>Q34.</strong> What does <code>dpkg -L curl</code> show?</p>
+<p><strong>Answer:</strong> The package's exact file manifest, which is what apt remove deletes and nothing more</p>
+<p>dpkg -S /usr/bin/curl does the reverse: which package owns a file.</p>
+<p><strong>Q35.</strong> What three things does 'install this package' really involve?</p>
+<p><strong>Answer:</strong> Unpack files, record which files belong to the package, and verify dependencies</p>
+<p>The record is what makes clean uninstalls possible.</p>
+<p><strong>Q36.</strong> What does <code>apt-cache depends curl</code> list?</p>
+<p><strong>Answer:</strong> Its dependencies, such as libcurl4t64, libc6 and zlib1g</p>
+<p>APT resolves that whole graph.</p>
+<h3 id="10-project-build-and-boot-a-minimal-root-filesystem"><a href="../level-1/10-project-minimal-rootfs/">10 · Project: Build and Boot a Minimal Root Filesystem</a><a class="headerlink" href="#10-project-build-and-boot-a-minimal-root-filesystem" title="Permanent link">&para;</a></h3>
+<p><strong>Q37.</strong> What does debootstrap do?</p>
+<p><strong>Answer:</strong> Downloads and unpacks just enough .deb packages into a target directory to make a minimal root filesystem, without booting anything</p>
+<p>Debian and Ubuntu installers use it internally.</p>
+<p><strong>Q38.</strong> Why does debootstrap have a second stage that runs inside chroot?</p>
+<p><strong>Answer:</strong> So package postinst scripts execute in the new filesystem's environment rather than against the host</p>
+<p>The first stage unpacks core packages.</p>
+<p><strong>Q39.</strong> What does --variant=minbase mean?</p>
+<p><strong>Answer:</strong> The smallest useful set of packages rather than a full default install</p>
+<p>--arch lets you build for another architecture, such as arm64 for a Raspberry Pi.</p>
+<p><strong>Q40.</strong> Why bind-mount /dev and mount proc and sysfs inside the chroot?</p>
+<p><strong>Answer:</strong> So tools inside see device nodes and the /proc and /sys virtual filesystems</p>
+<p>The chroot reported Ubuntu 24.04 while the host was 26.04.</p>
+<h2 id="level-2-processes-memory-storage">Level 2 · Processes, Memory &amp; Storage<a class="headerlink" href="#level-2-processes-memory-storage" title="Permanent link">&para;</a></h2>
+<h3 id="01-process-states-signals-job-control"><a href="../level-2/01-process-states-signals/">01 · Process States, Signals &amp; Job Control</a><a class="headerlink" href="#01-process-states-signals-job-control" title="Permanent link">&para;</a></h3>
+<p><strong>Q41.</strong> What does state D mean, and can SIGKILL stop it?</p>
+<p><strong>Answer:</strong> Uninterruptible sleep, usually waiting on disk I/O; it can't be killed until the I/O completes</p>
+<p>The kernel considers the operation too delicate to abort.</p>
+<p><strong>Q42.</strong> What is a zombie (Z) process?</p>
+<p><strong>Answer:</strong> A process that has exited but whose parent hasn't collected its exit status; kill -9 can't remove it</p>
+<p>It has no running code left to signal. The parent must wait() or die.</p>
+<p><strong>Q43.</strong> What do kill -STOP and kill -CONT do?</p>
+<p><strong>Answer:</strong> Move a process between S (sleeping) and T (stopped), like Ctrl-Z and fg/bg</p>
+<p>The lesson showed S → T → S with ps.</p>
+<p><strong>Q44.</strong> What is a signal, per the lesson?</p>
+<p><strong>Answer:</strong> Not a forceful interrupt but a flag the kernel sets that the target process, if in a position to, gets a chance to act on</p>
+<p>That's why kill -9 sometimes does nothing.</p>
+<h3 id="02-scheduling-nice-priorities-the-cfs"><a href="../level-2/02-scheduling-cfs/">02 · Scheduling: Nice, Priorities &amp; the CFS</a><a class="headerlink" href="#02-scheduling-nice-priorities-the-cfs" title="Permanent link">&para;</a></h3>
+<p><strong>Q45.</strong> What does a higher nice value mean?</p>
+<p><strong>Answer:</strong> More generous to others: a smaller claim on the CPU (range -20 to 19)</p>
+<p>Default is 0; -20 is the most aggressive.</p>
+<p><strong>Q46.</strong> In the lesson's ps output, how does PRI relate to NI?</p>
+<p><strong>Answer:</strong> Lower PRI tracks higher (less favourable) nice: nice 0 showed PRI 19, nice 10 showed 9, nice 15 showed 4</p>
+<p>ni is what you set; pri is procps's view of the kernel-level priority.</p>
+<p><strong>Q47.</strong> What does renice do?</p>
+<p><strong>Answer:</strong> Changes the niceness of an already running process, e.g. to deprioritise a batch job without restarting it</p>
+<p>Raising priority (lower nice) requires root.</p>
+<p><strong>Q48.</strong> What does <code>chrt -p $$</code> report for a normal shell?</p>
+<p><strong>Answer:</strong> SCHED_OTHER, the default time-shared policy</p>
+<p>SCHED_FIFO and SCHED_RR are real-time policies.</p>
+<h3 id="03-memory-management-virtual-memory-paging-the-oom-killer"><a href="../level-2/03-memory-management/">03 · Memory Management: Virtual Memory, Paging &amp; the OOM Killer</a><a class="headerlink" href="#03-memory-management-virtual-memory-paging-the-oom-killer" title="Permanent link">&para;</a></h3>
+<p><strong>Q49.</strong> Why does <code>free -h</code> show a tiny 'free' but a large 'available'?</p>
+<p><strong>Answer:</strong> Much of memory is used as reclaimable page cache (buff/cache), which the kernel can free when needed</p>
+<p>In the lesson, 1.0 GiB was free but 3.3 GiB available, with 2.5 GiB in buff/cache.</p>
+<p><strong>Q50.</strong> What does virtual memory give each process?</p>
+<p><strong>Answer:</strong> Its own private address space, mapped to physical pages by page tables (4 KiB pages on most systems)</p>
+<p>It also enables fork's copy-on-write and swapping.</p>
+<p><strong>Q51.</strong> How was the OOM kill in the lesson triggered?</p>
+<p><strong>Answer:</strong> systemd-run --scope -p MemoryMax=100M ran a script in a memory-limited cgroup, and the kernel killed it (CONSTRAINT_MEMCG)</p>
+<p>dmesg showed 'Memory cgroup out of memory: Killed process'.</p>
+<p><strong>Q52.</strong> What does the VM in the lesson lack that is common on cloud VMs and containers?</p>
+<p><strong>Answer:</strong> Swap (Swap: 0B)</p>
+<p>free -h showed 3.8 GiB total and no swap.</p>
+<h3 id="04-disks-block-devices-partitions-lvm-filesystems"><a href="../level-2/04-disks-lvm-filesystems/">04 · Disks &amp; Block Devices: Partitions, LVM &amp; Filesystems</a><a class="headerlink" href="#04-disks-block-devices-partitions-lvm-filesystems" title="Permanent link">&para;</a></h3>
+<p><strong>Q53.</strong> What are LVM's three layers?</p>
+<p><strong>Answer:</strong> Physical volumes (PVs) pooled into a volume group (VG), with logical volumes (LVs) carved out of the pool</p>
+<p>An LV can span multiple physical disks.</p>
+<p><strong>Q54.</strong> Why does LVM make growing storage easier than partitions?</p>
+<p><strong>Answer:</strong> Growing an LV is a software operation against the VG's free space, not a disk-geometry problem</p>
+<p>Partition resizing means shuffling data to make room.</p>
+<p><strong>Q55.</strong> How did the lesson simulate two physical disks?</p>
+<p><strong>Answer:</strong> Two 512 MB plain files attached as loop devices with losetup</p>
+<p>The files became /dev/loop0 and /dev/loop1.</p>
+<p><strong>Q56.</strong> What order of commands builds a usable LVM filesystem?</p>
+<p><strong>Answer:</strong> pvcreate, vgcreate, lvcreate, mkfs.ext4, then mount</p>
+<p>Then df -h confirms the mounted size (770M of an 800M LV after overhead).</p>
+<h3 id="05-mounting-fstab-network-filesystems"><a href="../level-2/05-mounting-fstab-nfs/">05 · Mounting, fstab &amp; Network Filesystems</a><a class="headerlink" href="#05-mounting-fstab-network-filesystems" title="Permanent link">&para;</a></h3>
+<p><strong>Q57.</strong> What do the six fstab fields mean, in order?</p>
+<p><strong>Answer:</strong> Device, mount point, type, options, dump flag, fsck pass number</p>
+<p>fsck pass 1 is for root, 2 for others, 0 for never.</p>
+<p><strong>Q58.</strong> Why identify a device by LABEL in fstab rather than /dev/vda1?</p>
+<p><strong>Answer:</strong> The label survives device renumbering</p>
+<p>A hardcoded path breaks if /dev/vda1 becomes /dev/vda2.</p>
+<p><strong>Q59.</strong> What does a bind mount do?</p>
+<p><strong>Answer:</strong> Makes the same directory's contents visible at a second path; it's not a new filesystem</p>
+<p>Writes through either path affect the same files; container runtimes use this to expose host directories.</p>
+<p><strong>Q60.</strong> How does findmnt differ from fstab?</p>
+<p><strong>Answer:</strong> findmnt shows the live mounts, which can differ from fstab if something was mounted by hand</p>
+<p>fstab is a declarative list for boot time.</p>
+<h3 id="06-systemd-deep-dive-units-targets-dependencies"><a href="../level-2/06-systemd-deep-dive/">06 · systemd Deep Dive: Units, Targets &amp; Dependencies</a><a class="headerlink" href="#06-systemd-deep-dive-units-targets-dependencies" title="Permanent link">&para;</a></h3>
+<p><strong>Q61.</strong> What is a target in systemd?</p>
+<p><strong>Answer:</strong> A special unit that groups other units as a synchronization point, like multi-user.target</p>
+<p>Units declare WantedBy=multi-user.target to start as part of reaching it, which is how systemctl enable works.</p>
+<p><strong>Q62.</strong> What does After= in a unit file mean?</p>
+<p><strong>Answer:</strong> An ordering constraint only, not a dependency; Wants=/Requires= express need</p>
+<p>ssh.service is deliberately tolerant of a not-fully-ready network.</p>
+<p><strong>Q63.</strong> What does ConditionPathExists=!/etc/ssh/sshd_not_to_be_run do?</p>
+<p><strong>Answer:</strong> A runtime gate: the unit is skipped if that file exists</p>
+<p>The ! negates the condition.</p>
+<p><strong>Q64.</strong> Which unit type starts its service lazily on first connection?</p>
+<p><strong>Answer:</strong> .socket</p>
+<p>A .timer is the scheduled-trigger unit.</p>
+<h3 id="07-writing-systemd-services-timers"><a href="../level-2/07-systemd-services-timers/">07 · Writing systemd Services &amp; Timers</a><a class="headerlink" href="#07-writing-systemd-services-timers" title="Permanent link">&para;</a></h3>
+<p><strong>Q65.</strong> What problem does OnUnitActiveSec= avoid compared with cron?</p>
+<p><strong>Answer:</strong> A job overlapping itself, because it runs N seconds after the previous run finished</p>
+<p>A 5-minute job scheduled every 5 minutes can overlap if one run takes 6 minutes under cron.</p>
+<p><strong>Q66.</strong> What does <code>Type=oneshot</code> on heartbeat.service mean?</p>
+<p><strong>Answer:</strong> It runs a command to completion and then becomes inactive (dead) until triggered again</p>
+<p>systemctl status showed inactive (dead) with status=0/SUCCESS between timer runs.</p>
+<p><strong>Q67.</strong> What do you run to enable a timer and start it right now?</p>
+<p><strong>Answer:</strong> sudo systemctl enable --now heartbeat.timer</p>
+<p>It creates the symlink under timers.target.wants.</p>
+<p><strong>Q68.</strong> Where does the service's output go with a timer-based job?</p>
+<p><strong>Answer:</strong> Through the normal journald pipeline, with no mail or separate logging setup</p>
+<p>systemctl status also shows when it last ran and whether it succeeded.</p>
+<h3 id="08-logging-journald-structured-logs-at-the-os-level"><a href="../level-2/08-journald-logging/">08 · Logging &amp; journald: Structured Logs at the OS Level</a><a class="headerlink" href="#08-logging-journald-structured-logs-at-the-os-level" title="Permanent link">&para;</a></h3>
+<p><strong>Q69.</strong> How does a journal entry differ from a syslog text line?</p>
+<p><strong>Answer:</strong> It's a structured record with named fields, several attached automatically by the journal</p>
+<p>Examples: _UID, _GID, _BOOT_ID, _SYSTEMD_CGROUP.</p>
+<p><strong>Q70.</strong> Why can journalctl -u filter by unit even for programs that never use systemd APIs?</p>
+<p><strong>Answer:</strong> The filtering key comes from the environment the message was logged in (the cgroup/unit), not from parsing text</p>
+<p>Programs writing to stdout or stderr under a unit still get unit, UID, GID, cgroup and boot ID fields.</p>
+<p><strong>Q71.</strong> What do CODE_FILE, CODE_FUNC and CODE_LINE show?</p>
+<p><strong>Answer:</strong> The source location, present only when the program uses sd_journal_print()-style calls</p>
+<p>Plain stdout logging doesn't include them.</p>
+<p><strong>Q72.</strong> What does an existing /var/log/journal directory indicate?</p>
+<p><strong>Answer:</strong> Persistent journal storage (otherwise logs live in memory and are lost at reboot)</p>
+<p>The lesson's <code>journalctl --disk-usage</code> showed 8M.</p>
+<h3 id="09-device-files-udev-dev"><a href="../level-2/09-device-files-udev/">09 · Device Files, udev &amp; /dev</a><a class="headerlink" href="#09-device-files-udev-dev" title="Permanent link">&para;</a></h3>
+<p><strong>Q73.</strong> What do the leading c and b in ls -l on a device file mean?</p>
+<p><strong>Answer:</strong> c is a character device (stream); b is a block device (fixed-size blocks)</p>
+<p>/dev/null is c; /dev/vda is b.</p>
+<p><strong>Q74.</strong> What do the major and minor numbers identify?</p>
+<p><strong>Answer:</strong> Major: which driver handles the device; minor: which specific instance the driver should talk to</p>
+<p>/dev/null (1,3) and /dev/zero (1,5) share major 1 and differ by minor.</p>
+<p><strong>Q75.</strong> What does udev do?</p>
+<p><strong>Answer:</strong> Names newly detected devices and creates symlinks such as disk/by-path and disk/by-diskseq</p>
+<p>udevadm info shows the S: symlink lines.</p>
+<p><strong>Q76.</strong> Why is /dev/vda major 253 in the lesson's VM?</p>
+<p><strong>Answer:</strong> It's a virtio_blk paravirtualised disk; real hardware would show a different major for its driver</p>
+<p>The major identifies the driver.</p>
+<h3 id="10-project-diagnose-a-resource-starved-system"><a href="../level-2/10-project-resource-diagnosis/">10 · Project: Diagnose a Resource-Starved System</a><a class="headerlink" href="#10-project-diagnose-a-resource-starved-system" title="Permanent link">&para;</a></h3>
+<p><strong>Q77.</strong> What does <code>ps -eo ... --sort=-pcpu</code> reveal about two cpu_hog.sh loops?</p>
+<p><strong>Answer:</strong> They're in state R at about 100% CPU each, dwarfing every other process</p>
+<p>R means runnable: on a CPU or waiting for one.</p>
+<p><strong>Q78.</strong> Why did uptime's load average look low (0.00, 0.05, 0.04) right after starting the hogs?</p>
+<p><strong>Answer:</strong> Load average is an exponentially decaying moving average over 1/5/15 minutes, so it takes wall-clock time to rise</p>
+<p>The samples were taken in the first couple of seconds.</p>
+<p><strong>Q79.</strong> In the vmstat output, what did the two hogs show?</p>
+<p><strong>Answer:</strong> us (user CPU) about 50% and id about 50%, with r = 2 runnable processes</p>
+<p>A 2-CPU VM with two spinning loops uses half the CPU in user mode on average.</p>
+<p><strong>Q80.</strong> What does an infinite <code>while true; do :; done</code> loop simulate?</p>
+<p><strong>Answer:</strong> A process stuck in a bad loop or spinning instead of blocking on I/O: a realistic incident pattern</p>
+<p>The kernel schedules it like any CPU-bound process.</p>
+<h2 id="level-3-networking-security-internals">Level 3 · Networking &amp; Security Internals<a class="headerlink" href="#level-3-networking-security-internals" title="Permanent link">&para;</a></h2>
+<h3 id="01-the-linux-network-stack-interfaces-ip-routing"><a href="../level-3/01-network-stack-routing/">01 · The Linux Network Stack: Interfaces, IP &amp; Routing</a><a class="headerlink" href="#01-the-linux-network-stack-interfaces-ip-routing" title="Permanent link">&para;</a></h3>
+<p><strong>Q81.</strong> What is the loopback interface (lo) for?</p>
+<p><strong>Answer:</strong> Letting a machine talk to itself without touching real hardware</p>
+<p>A real NIC, a virtual device or lo can each be an interface.</p>
+<p><strong>Q82.</strong> What does <code>scope link</code> on an address mean, versus <code>scope global</code>?</p>
+<p><strong>Answer:</strong> link is valid only on the local network segment (like IPv6 link-local); global is routable beyond this machine</p>
+<p>The lesson's fe80:: address has scope link.</p>
+<p><strong>Q83.</strong> What does <code>dynamic</code> on an inet address indicate?</p>
+<p><strong>Answer:</strong> It came from DHCP, with valid_lft/preferred_lft lease timers, so it can change</p>
+<p>Nothing on the system owns the IP permanently.</p>
+<p><strong>Q84.</strong> What does <code>ip route get 8.8.8.8</code> show?</p>
+<p><strong>Answer:</strong> The kernel's actual routing decision: next hop (via 192.168.5.2), interface and source address</p>
+<p>Anything outside the local /24 uses the default route via the gateway.</p>
+<h3 id="02-dns-resolution-on-linux-resolvconf-nsswitch-systemd-resolved"><a href="../level-3/02-dns-resolution/">02 · DNS Resolution on Linux: resolv.conf, nsswitch &amp; systemd-resolved</a><a class="headerlink" href="#02-dns-resolution-on-linux-resolvconf-nsswitch-systemd-resolved" title="Permanent link">&para;</a></h3>
+<p><strong>Q85.</strong> What does the hosts: files dns line in nsswitch.conf mean?</p>
+<p><strong>Answer:</strong> Check /etc/hosts first, then DNS</p>
+<p>That's why a /etc/hosts entry overrides DNS.</p>
+<p><strong>Q86.</strong> Why does /etc/resolv.conf show nameserver 127.0.0.53?</p>
+<p><strong>Answer:</strong> It's systemd-resolved's local stub resolver; the real upstream server (192.168.5.2) is shown by resolvectl status</p>
+<p>The file says 'Do not edit'.</p>
+<p><strong>Q87.</strong> What does resolvectl query github.com show?</p>
+<p><strong>Answer:</strong> One real resolution end to end: the address, the link, time taken and the protocol used</p>
+<p>In the lesson: 22.2 ms via DNS.</p>
+<p><strong>Q88.</strong> Which layer is consulted first for any program calling getaddrinfo()?</p>
+<p><strong>Answer:</strong> nsswitch.conf's lookup order</p>
+<p>resolv.conf comes into play only when resolution falls through to dns.</p>
+<h3 id="03-netfilter-firewalls-iptables-vs-nftables"><a href="../level-3/03-netfilter-iptables-nftables/">03 · Netfilter &amp; Firewalls: iptables vs nftables</a><a class="headerlink" href="#03-netfilter-firewalls-iptables-vs-nftables" title="Permanent link">&para;</a></h3>
+<p><strong>Q89.</strong> What is Netfilter?</p>
+<p><strong>Answer:</strong> The kernel subsystem with hook points (prerouting, input, forward, output, postrouting) that iptables and nftables configure</p>
+<p>Neither iptables nor nftables is netfilter itself.</p>
+<p><strong>Q90.</strong> What does <code>iptables -V</code> showing <code>(nf_tables)</code> mean?</p>
+<p><strong>Answer:</strong> The iptables command is a compatibility layer that translates rules into nftables</p>
+<p>It doesn't touch the legacy ipt_* modules.</p>
+<p><strong>Q91.</strong> What does this nft rule do? <code>nft add rule inet demo input ip saddr 10.99.99.99 drop</code></p>
+<p><strong>Answer:</strong> Drops incoming packets from source 10.99.99.99 in a chain attached to the input hook</p>
+<p>The chain was created with type filter hook input.</p>
+<p><strong>Q92.</strong> Where did the LIMADNS chain in the VM's ruleset come from?</p>
+<p><strong>Answer:</strong> Lima's own networking setup, redirecting DNS traffic for the VM</p>
+<p>nft list ruleset shows the system's actual configuration.</p>
+<h3 id="04-sockets-ports-the-ssnetstat-toolset"><a href="../level-3/04-sockets-ports-ss/">04 · Sockets, Ports &amp; the ss/netstat Toolset</a><a class="headerlink" href="#04-sockets-ports-the-ssnetstat-toolset" title="Permanent link">&para;</a></h3>
+<p><strong>Q93.</strong> What does a LISTEN socket represent?</p>
+<p><strong>Answer:</strong> A server announcing it will accept new connections on a port; the kernel queues handshaken connections until accept()</p>
+<p>ESTABLISHED is an active two-way conversation.</p>
+<p><strong>Q94.</strong> What uniquely identifies an ESTABLISHED connection?</p>
+<p><strong>Answer:</strong> The pairing of a local address:port with a remote address:port</p>
+<p>The lesson showed both ends of 127.0.0.1:8899 and 127.0.0.1:38698.</p>
+<p><strong>Q95.</strong> What does <code>ss -tlnp</code> list?</p>
+<p><strong>Answer:</strong> TCP listening sockets with numeric ports and the owning process</p>
+<p>-t TCP, -l listening, -n numeric, -p process.</p>
+<p><strong>Q96.</strong> What does listening on 0.0.0.0:22 versus 127.0.0.1:8899 mean?</p>
+<p><strong>Answer:</strong> 0.0.0.0 accepts on all interfaces; 127.0.0.1 accepts only local connections</p>
+<p>systemd-resolved listens on 127.0.0.53 and 127.0.0.54 on port 53.</p>
+<h3 id="05-ssh-internals-keys-agents-the-protocol"><a href="../level-3/05-ssh-internals/">05 · SSH Internals: Keys, Agents &amp; the Protocol</a><a class="headerlink" href="#05-ssh-internals-keys-agents-the-protocol" title="Permanent link">&para;</a></h3>
+<p><strong>Q97.</strong> What is the difference between a host key and a user key?</p>
+<p><strong>Answer:</strong> A host key proves the server's identity to you; a user key proves your authorisation to the server</p>
+<p>authorized_keys and ssh-copy-id are built around user keys.</p>
+<p><strong>Q98.</strong> Why does SSH warn loudly 'REMOTE HOST IDENTIFICATION HAS CHANGED'?</p>
+<p><strong>Answer:</strong> A host key almost never changes, so a change could be re-provisioning or a man-in-the-middle, and SSH can't tell which</p>
+<p>It catches both causes.</p>
+<p><strong>Q99.</strong> Why must the host private key be mode rw-------?</p>
+<p><strong>Answer:</strong> sshd refuses to use a key file with overly permissive permissions, and a readable private key defeats its purpose</p>
+<p>The public key is world-readable, as it should be.</p>
+<p><strong>Q100.</strong> What does ssh-agent hold, and what does <code>ssh-add -l</code> list?</p>
+<p><strong>Answer:</strong> Loaded identities in memory; their fingerprints</p>
+<p>It showed the demo-key's SHA256 fingerprint.</p>
+<h3 id="06-linux-security-modules-selinux-vs-apparmor"><a href="../level-3/06-selinux-apparmor/">06 · Linux Security Modules: SELinux vs AppArmor</a><a class="headerlink" href="#06-linux-security-modules-selinux-vs-apparmor" title="Permanent link">&para;</a></h3>
+<p><strong>Q101.</strong> What question does a Linux Security Module answer that rwx permissions don't?</p>
+<p><strong>Answer:</strong> Can this specific program, regardless of which user runs it, do this specific thing — even for root</p>
+<p>It's mandatory access control layered on top of owner/group/other.</p>
+<p><strong>Q102.</strong> How do AppArmor and SELinux differ?</p>
+<p><strong>Answer:</strong> AppArmor is path-based with per-executable profiles; SELinux is label-based with contexts (user:role:type:level)</p>
+<p>AppArmor is Ubuntu/Debian's default; SELinux is Red Hat/Fedora's.</p>
+<p><strong>Q103.</strong> In the lesson, why did sshd show 'unconfined' while dig showed 'dig (enforce)'?</p>
+<p><strong>Answer:</strong> A profile exists and is enforced for dig but not for sshd on that system; having some profiles doesn't confine every process</p>
+<p>/proc/&lt;pid&gt;/attr/current reveals a process's confinement.</p>
+<p><strong>Q104.</strong> What does aa-status report?</p>
+<p><strong>Answer:</strong> How many profiles are loaded and in enforce or complain mode</p>
+<p>The lesson showed 180 loaded, 103 enforcing, 2 complain.</p>
+<h3 id="07-namespaces-cgroups-the-building-blocks-of-containers"><a href="../level-3/07-namespaces-cgroups/">07 · Namespaces &amp; Cgroups: The Building Blocks of Containers</a><a class="headerlink" href="#07-namespaces-cgroups-the-building-blocks-of-containers" title="Permanent link">&para;</a></h3>
+<p><strong>Q105.</strong> What are the two mechanisms that make a container look isolated?</p>
+<p><strong>Answer:</strong> Namespaces (what a process can see) and cgroups (what it can use)</p>
+<p>A container is a normal Linux process on the host kernel.</p>
+<p><strong>Q106.</strong> In the unshare PID-namespace demo, what PID did bash report for itself?</p>
+<p><strong>Answer:</strong> 1, genuinely what getpid() returns inside the namespace</p>
+<p>ps aux inside saw only three processes.</p>
+<p><strong>Q107.</strong> Why was --mount-proc needed?</p>
+<p><strong>Answer:</strong> Otherwise /proc would still show the host's process table through the mount namespace</p>
+<p>It mounts a fresh /proc for the new PID namespace.</p>
+<p><strong>Q108.</strong> Which namespace isolates the hostname, which plain chroot does not?</p>
+<p><strong>Answer:</strong> UTS</p>
+<p>Others: network, user (UID/GID mapping), IPC and cgroup.</p>
+<h3 id="08-kernel-tuning-sysctl-proc-parameters"><a href="../level-3/08-sysctl-kernel-tuning/">08 · Kernel Tuning: sysctl &amp; /proc Parameters</a><a class="headerlink" href="#08-kernel-tuning-sysctl-proc-parameters" title="Permanent link">&para;</a></h3>
+<p><strong>Q109.</strong> How does the sysctl name net.ipv4.ip_forward map to the filesystem?</p>
+<p><strong>Answer:</strong> /proc/sys/net/ipv4/ip_forward (dots become slashes)</p>
+<p>Reading or writing the file has the identical immediate effect.</p>
+<p><strong>Q110.</strong> What does net.ipv4.ip_forward = 1 do?</p>
+<p><strong>Answer:</strong> Lets the kernel route packets between interfaces (an endpoint becomes a router)</p>
+<p>sysctl -w takes effect immediately, no reboot.</p>
+<p><strong>Q111.</strong> How do you make a sysctl setting persist across reboots?</p>
+<p><strong>Answer:</strong> Put it in a file under /etc/sysctl.d/</p>
+<p>For example 99-lima.conf.</p>
+<p><strong>Q112.</strong> What does net.ipv4.ip_unprivileged_port_start=0 do?</p>
+<p><strong>Answer:</strong> Lets unprivileged users bind ports below 1024</p>
+<p>Ports under 1024 are traditionally root-only.</p>
+<h3 id="09-auditing-hardening-auditd-and-fail2ban"><a href="../level-3/09-auditd-fail2ban-hardening/">09 · Auditing &amp; Hardening: auditd and fail2ban</a><a class="headerlink" href="#09-auditing-hardening-auditd-and-fail2ban" title="Permanent link">&para;</a></h3>
+<p><strong>Q113.</strong> What does <code>auditctl -w /etc/passwd -p wa -k passwd_watch</code> do?</p>
+<p><strong>Answer:</strong> Watches /etc/passwd for write and attribute-change access, tagging events with the key passwd_watch</p>
+<p>touch caused one matching event.</p>
+<p><strong>Q114.</strong> What does an audit record give you that an inotify-style 'file changed' event doesn't?</p>
+<p><strong>Answer:</strong> A forensic record: process, real vs audit UID, syscall and success or failure, tied to a rule key</p>
+<p>It's suited to compliance reviews and incident investigation.</p>
+<p><strong>Q115.</strong> What was the real tooling mismatch in the lab?</p>
+<p><strong>Answer:</strong> ausearch -k found nothing although grep found the event in the raw audit log</p>
+<p>Probably a parsing mismatch between the ausearch version and the log format.</p>
+<p><strong>Q116.</strong> What lesson does the mismatch teach?</p>
+<p><strong>Answer:</strong> Know the raw log location (/var/log/audit/audit.log) and sanity-check a 'no matches' result against it</p>
+<p>Otherwise you might believe a real event never happened.</p>
+<h3 id="10-project-build-a-container-from-namespaces-and-cgroups"><a href="../level-3/10-project-mini-container/">10 · Project: Build a Container From Namespaces and Cgroups</a><a class="headerlink" href="#10-project-build-a-container-from-namespaces-and-cgroups" title="Permanent link">&para;</a></h3>
+<p><strong>Q117.</strong> What does the project combine to build a 'container' by hand?</p>
+<p><strong>Answer:</strong> unshare namespaces (PID, mount, UTS) and a cgroup v2 memory limit</p>
+<p>No container runtime is involved.</p>
+<p><strong>Q118.</strong> How is the shell placed into the limited cgroup?</p>
+<p><strong>Answer:</strong> By writing its PID to the cgroup's cgroup.procs; memory.max sets the ceiling</p>
+<p>Everything it spawns afterwards is in the group too.</p>
+<p><strong>Q119.</strong> What happened when python allocated memory past 50M?</p>
+<p><strong>Answer:</strong> The kernel OOM-killed it inside the cgroup (CONSTRAINT_MEMCG); the shell reported 'Killed'</p>
+<p>dmesg showed 'Memory cgroup out of memory: Killed process'.</p>
+<p><strong>Q120.</strong> Why does hostname inside show minicontainer while the host still shows lima-linuxlab?</p>
+<p><strong>Answer:</strong> The UTS namespace isolates the hostname, unlike plain chroot</p>
+<p>--uts adds it to the PID and mount namespaces.</p>
+<h2 id="level-4-performance-troubleshooting-capstone">Level 4 · Performance, Troubleshooting &amp; Capstone<a class="headerlink" href="#level-4-performance-troubleshooting-capstone" title="Permanent link">&para;</a></h2>
+<h3 id="01-performance-tools-top-vmstat-iostat-free-explained"><a href="../level-4/01-performance-tools/">01 · Performance Tools: top, vmstat, iostat &amp; free Explained</a><a class="headerlink" href="#01-performance-tools-top-vmstat-iostat-free-explained" title="Permanent link">&para;</a></h3>
+<p><strong>Q121.</strong> In top's %Cpu(s), what does wa mean?</p>
+<p><strong>Answer:</strong> Time spent waiting on I/O: CPU idle but not free, something is blocked on disk or network</p>
+<p>us is user mode, sy is kernel, id is genuinely idle.</p>
+<p><strong>Q122.</strong> Why is 'avail Mem' much larger than 'free' in top?</p>
+<p><strong>Answer:</strong> Reclaimable buff/cache counts as available</p>
+<p>3340.9 available versus 1018.4 free in the lesson.</p>
+<p><strong>Q123.</strong> Why is iostat's %util misunderstood?</p>
+<p><strong>Answer:</strong> It measures time with outstanding I/O, not percent of disk capacity or throughput headroom; check await and aqu-sz too</p>
+<p>Don't size storage decisions on it alone.</p>
+<p><strong>Q124.</strong> What does the <code>1 zombie</code> in top's Tasks line refer to?</p>
+<p><strong>Answer:</strong> The leftover sshd zombie seen in the earlier process-states lesson</p>
+<p>A zombie is an exited process whose parent hasn't collected it.</p>
+<h3 id="02-tracing-profiling-strace-ltrace-perf"><a href="../level-4/02-strace-ltrace-perf/">02 · Tracing &amp; Profiling: strace, ltrace &amp; perf</a><a class="headerlink" href="#02-tracing-profiling-strace-ltrace-perf" title="Permanent link">&para;</a></h3>
+<p><strong>Q125.</strong> What does strace show?</p>
+<p><strong>Answer:</strong> Every system call a running process makes</p>
+<p>ltrace shows library calls; perf shows where CPU time goes.</p>
+<p><strong>Q126.</strong> What did <code>strace -c ls /tmp</code> reveal?</p>
+<p><strong>Answer:</strong> Even a simple command made 159 syscalls and hit 12 errors</p>
+<p>Locale lookups, mmap of libraries and terminal checks add up.</p>
+<p><strong>Q127.</strong> What did strace show about cat's failed openat of a locale .ftl file?</p>
+<p><strong>Answer:</strong> ENOENT: a harmless lookup that cat silently tolerates before opening the real file</p>
+<p>It answers 'why is this program touching that path' with evidence.</p>
+<p><strong>Q128.</strong> What does strace -e trace=open,openat do?</p>
+<p><strong>Answer:</strong> Filters output to just those syscalls</p>
+<p>It makes long traces readable.</p>
+<h3 id="03-filesystem-performance-io-scheduling"><a href="../level-4/03-filesystem-performance-io/">03 · Filesystem Performance &amp; I/O Scheduling</a><a class="headerlink" href="#03-filesystem-performance-io-scheduling" title="Permanent link">&para;</a></h3>
+<p><strong>Q129.</strong> When is the <code>none</code> I/O scheduler often the right choice?</p>
+<p><strong>Answer:</strong> For fast NVMe storage, where the device's own queues do better than software reordering</p>
+<p>Reordering has a cost, and skipping it is correct when the device doesn't need help.</p>
+<p><strong>Q130.</strong> What does mq-deadline prioritise?</p>
+<p><strong>Answer:</strong> Fairness and bounded latency, so no request waits indefinitely</p>
+<p>bfq optimises interactive responsiveness on slower devices.</p>
+<p><strong>Q131.</strong> Why was <code>rotational = 1</code> on a virtio disk surprising?</p>
+<p><strong>Answer:</strong> It tells the kernel it's a spinning disk, but the 1.4 GB/s throughput shows it's flash-backed; virtualisation made the hint unreliable</p>
+<p>The flag wasn't correctly propagated through the virtual device.</p>
+<p><strong>Q132.</strong> What does nr_requests = 256 mean?</p>
+<p><strong>Answer:</strong> The queue depth the block layer holds before applying backpressure to the application</p>
+<p>It's visible in /sys/block/vda/queue/.</p>
+<h3 id="04-kernel-modules-loading-building-debugging"><a href="../level-4/04-kernel-modules/">04 · Kernel Modules: Loading, Building &amp; Debugging</a><a class="headerlink" href="#04-kernel-modules-loading-building-debugging" title="Permanent link">&para;</a></h3>
+<p><strong>Q133.</strong> What does <code>insmod hello.ko</code> do, and how do you confirm it loaded?</p>
+<p><strong>Answer:</strong> Loads the module into the running kernel; lsmod | grep hello shows it</p>
+<p>The usage count of 0 means nothing depends on it, so rmmod is safe.</p>
+<p><strong>Q134.</strong> Where did the module's printk messages appear?</p>
+<p><strong>Answer:</strong> In the kernel log, via dmesg</p>
+<p>One message on init, one on exit.</p>
+<p><strong>Q135.</strong> Why does the build need /lib/modules/$(uname -r)/build?</p>
+<p><strong>Answer:</strong> It compiles against the running kernel's real headers and build system</p>
+<p>The Makefile calls make -C ... M=$(PWD) modules.</p>
+<p><strong>Q136.</strong> What were the two build warnings about?</p>
+<p><strong>Answer:</strong> The compiler and pahole versions differ from those that built the shipped kernel, usually harmless for simple modules but risky for complex ones</p>
+<p>pahole generates BTF debug metadata.</p>
+<h3 id="05-proc-and-sys-as-debugging-tools"><a href="../level-4/05-proc-sys-debugging/">05 · /proc and /sys as Debugging Tools</a><a class="headerlink" href="#05-proc-and-sys-as-debugging-tools" title="Permanent link">&para;</a></h3>
+<p><strong>Q137.</strong> What does <code>ls -l /proc/$PID/fd</code> reveal about a running process?</p>
+<p><strong>Answer:</strong> Exactly what it has open: files, sockets and pipes, without attaching a debugger</p>
+<p>The example showed a listening socket (fd 3) and a file opened for writing (fd 4).</p>
+<p><strong>Q138.</strong> What does /proc/$PID/wchan show?</p>
+<p><strong>Answer:</strong> The kernel function the process is currently blocked in (e.g. hrtimer_nanosleep)</p>
+<p>It matched time.sleep(60) in the script.</p>
+<p><strong>Q139.</strong> Why was reading /proc/$PID/syscall refused without sudo?</p>
+<p><strong>Answer:</strong> Yama's ptrace_scope only allows inspecting direct ancestors or descendants by default</p>
+<p>sudo bypassed the restriction.</p>
+<p><strong>Q140.</strong> What does /proc/$PID/syscall show?</p>
+<p><strong>Answer:</strong> The raw syscall number and argument registers the process is currently inside</p>
+<p>Syscall 115 on that architecture is nanosleep-family.</p>
+<h3 id="06-troubleshooting-boot-failures-recovery-mode"><a href="../level-4/06-boot-failure-recovery/">06 · Troubleshooting Boot Failures &amp; Recovery Mode</a><a class="headerlink" href="#06-troubleshooting-boot-failures-recovery-mode" title="Permanent link">&para;</a></h3>
+<p><strong>Q141.</strong> How can you validate a new fstab line before a reboot?</p>
+<p><strong>Answer:</strong> Run mount -a, which attempts every entry as boot would</p>
+<p>It caught a missing mount point in the lesson.</p>
+<p><strong>Q142.</strong> What happens at boot when a non-root fstab entry fails?</p>
+<p><strong>Answer:</strong> systemd can't reach the dependent target and drops to an emergency shell for a human to intervene</p>
+<p>It doesn't silently continue in a broken state.</p>
+<p><strong>Q143.</strong> What are two common fstab failure modes?</p>
+<p><strong>Answer:</strong> The device doesn't exist, or the mount point doesn't exist (mkdir -p may be all that's missing)</p>
+<p>Both can be tested on a running system.</p>
+<p><strong>Q144.</strong> What does journalctl --list-boots show?</p>
+<p><strong>Answer:</strong> The boots recorded in the journal; the VM had only one</p>
+<p>It's the command to check earlier boots for a failure.</p>
+<h3 id="07-containers-vs-vms-where-os-fundamentals-end-and-virtualization-begins"><a href="../level-4/07-containers-vs-vms/">07 · Containers vs VMs: Where OS Fundamentals End and Virtualization Begins</a><a class="headerlink" href="#07-containers-vs-vms-where-os-fundamentals-end-and-virtualization-begins" title="Permanent link">&para;</a></h3>
+<p><strong>Q145.</strong> What is a container, compared with a VM?</p>
+<p><strong>Answer:</strong> A normal process on the same running kernel with a restricted view of resources; a VM boots a separate kernel on virtualised hardware</p>
+<p>There's exactly one kernel involved for a container.</p>
+<p><strong>Q146.</strong> Why is creating a container so fast?</p>
+<p><strong>Answer:</strong> It's just a new process with extra kernel bookkeeping (namespaces, a cgroup); <code>unshare --pid --mount-proc --fork true</code> took about 13 ms</p>
+<p>A VM's boot measures in seconds to minutes.</p>
+<p><strong>Q147.</strong> How was the VM's boot time measured in the lesson?</p>
+<p><strong>Answer:</strong> systemd-analyze: kernel 317ms, initrd 1.3s, userspace about 2m45s (mostly cloud-init network wait)</p>
+<p>A real kernel boot and full userspace startup are unavoidable costs.</p>
+<p><strong>Q148.</strong> What's a mistake in choosing between them?</p>
+<p><strong>Answer:</strong> Choosing a VM 'to be safe' where properly configured container isolation would suffice</p>
+<p>The right tool depends on the isolation needed.</p>
+<h3 id="08-linux-distros-compared-debian-rhel-arch-alpine"><a href="../level-4/08-distros-compared/">08 · Linux Distros Compared: Debian, RHEL, Arch &amp; Alpine</a><a class="headerlink" href="#08-linux-distros-compared-debian-rhel-arch-alpine" title="Permanent link">&para;</a></h3>
+<p><strong>Q149.</strong> What differs between mainstream distros, and what doesn't?</p>
+<p><strong>Answer:</strong> Package manager, release model and defaults differ; kernel and systemd features like permissions, namespaces and netfilter are the same</p>
+<p>The lesson is documentation-based because it can't be verified on one distro.</p>
+<p><strong>Q150.</strong> How do Fedora and RHEL relate?</p>
+<p><strong>Answer:</strong> Fedora is the fast-moving upstream; RHEL (and Rocky, AlmaLinux) is the long-support downstream built from a Fedora base</p>
+<p>It mirrors Ubuntu's LTS philosophy.</p>
+<p><strong>Q151.</strong> What is Arch Linux's release model?</p>
+<p><strong>Answer:</strong> Rolling release: there is no 'Arch 26.04'; the system continuously updates (pacman)</p>
+<p>The philosophy differs from Debian and RHEL.</p>
+<p><strong>Q152.</strong> Which default LSM do Ubuntu/Debian and RHEL/Fedora use?</p>
+<p><strong>Answer:</strong> AppArmor for Debian/Ubuntu; SELinux for RHEL/Fedora</p>
+<p>Both use systemd init.</p>
+<h3 id="09-kernel-versions-lts-staying-current"><a href="../level-4/09-kernel-versions-lts/">09 · Kernel Versions, LTS &amp; Staying Current</a><a class="headerlink" href="#09-kernel-versions-lts-staying-current" title="Permanent link">&para;</a></h3>
+<p><strong>Q153.</strong> What are the three kernel.org lines?</p>
+<p><strong>Answer:</strong> Mainline (newest, least tested), stable (bugfix backports for a few months) and longterm (bugfixes for years)</p>
+<p>Distros and embedded systems build on longterm lines.</p>
+<p><strong>Q154.</strong> Is the newest longterm kernel the newest mainline release?</p>
+<p><strong>Answer:</strong> No: LTS is a deliberate choice for specific releases (6.18 longterm versus 7.3 mainline in the data)</p>
+<p>A kernel needn't be the newest to be fully supported.</p>
+<p><strong>Q155.</strong> How many longterm lines were receiving updates in the lesson's data?</p>
+<p><strong>Answer:</strong> Six (from 5.10 through 6.18)</p>
+<p>It was fetched live from kernel.org/releases.json.</p>
+<p><strong>Q156.</strong> Why does the lesson fetch live release data?</p>
+<p><strong>Answer:</strong> Version numbers go stale, so check current data rather than memory</p>
+<p>The output will look different by the time you read it.</p>
+<h3 id="10-capstone-build-harden-diagnose-a-linux-server-from-scratch"><a href="../level-4/10-capstone-server-build/">10 · Capstone: Build, Harden &amp; Diagnose a Linux Server From Scratch</a><a class="headerlink" href="#10-capstone-build-harden-diagnose-a-linux-server-from-scratch" title="Permanent link">&para;</a></h3>
+<p><strong>Q157.</strong> What makes <code>appuser</code> a least-privilege setup?</p>
+<p><strong>Answer:</strong> A dedicated user with key-only SSH (authorized_keys 600, .ssh 700, no password) running the service</p>
+<p>The service also runs as appuser under systemd.</p>
+<p><strong>Q158.</strong> What does curl returning 000 mean when the service is stopped?</p>
+<p><strong>Answer:</strong> No HTTP status at all: nothing is accepting the connection, so check systemctl status (inactive (dead))</p>
+<p>It points away from an HTTP-level problem.</p>
+<p><strong>Q159.</strong> What does Fault 2 in the lesson illustrate?</p>
+<p><strong>Answer:</strong> A firewall rule silently dropping a port that is listening, which ss -tln shows as LISTEN while connections still fail</p>
+<p>The listener exists, but the packets never reach it.</p>
+<p><strong>Q160.</strong> Which pieces does the capstone combine?</p>
+<p><strong>Answer:</strong> Users and SSH keys, a systemd service, an nftables rule, and diagnosis with the course's tools</p>
+<p>Three faults were injected on purpose and diagnosed.</p>
+<h2 id="mixed-questions-across-all-levels">Mixed questions across all levels<a class="headerlink" href="#mixed-questions-across-all-levels" title="Permanent link">&para;</a></h2>
+<p><strong>Q161.</strong> A directory has mode 311 (d-wx--x--x) and you are its owner. <code>ls project</code> fails with 'Permission denied' but <code>cat project/notes.txt</code> works. Why?</p>
+<p><strong>Answer:</strong> There is no read bit, so listing names is denied, but execute lets you traverse into it by name</p>
+<p>Read on a directory lists names; execute allows access by name. Verified: chmod 311 gives d-wx--x--x.</p>
+<p><strong>Q162.</strong> With umask 022, what modes do a new file and a new directory get? With umask 077?</p>
+<p><strong>Answer:</strong> 022: file 644, directory 755. 077: file 600, directory 700</p>
+<p>New files start at 666 and directories at 777, minus the umask. Verified by creating them: 644/755 and 600/700.</p>
+<p><strong>Q163.</strong> A shared project directory should make every new file belong to the team group automatically. Which setting?</p>
+<p><strong>Answer:</strong> SGID on the directory (chmod 2775, group set to the team): drwxrwsr-x</p>
+<p>SGID on a directory makes new files inherit the directory's group. Verified: chmod 2775 shows drwxrwsr-x.</p>
+<p><strong>Q164.</strong> Anyone may create files in /tmp but only a file's owner may delete it. Which bit, and how does it appear?</p>
+<p><strong>Answer:</strong> The sticky bit, shown as t: drwxrwxrwt (mode 1777)</p>
+<p>Verified: chmod 1777 gives drwxrwxrwt.</p>
+<p><strong>Q165.</strong> <code>ls -l /usr/bin/passwd</code> shows -rwsr-xr-x root root. What does the s mean for a normal user running it?</p>
+<p><strong>Answer:</strong> The program runs with the file owner's (root's) UID, so it can update /etc/shadow</p>
+<p>SUID applies for the lifetime of that process only.</p>
+<p><strong>Q166.</strong> You run <code>ln original.txt hardlink.txt</code> and <code>ln -s original.txt symlink.txt</code>, then <code>rm original.txt</code>. What happens?</p>
+<p><strong>Answer:</strong> cat hardlink.txt still works (the inode survives with 1 link); the symlink is broken</p>
+<p>A hard link is another name for the same inode; a symlink stores a path. Verified by running the commands: link count 2 → 1, hardlink prints hello, symlink broken.</p>
+<p><strong>Q167.</strong> <code>ls /nonexistent 2&gt;&amp;1 &gt; cmd.log</code> leaves cmd.log empty and prints the error to the screen. Why?</p>
+<p><strong>Answer:</strong> stderr was duplicated onto the terminal first; only afterwards was stdout redirected to the file</p>
+<p>Redirections apply left to right. <code>&gt; cmd.log 2&gt;&amp;1</code> captures both. Verified by running both orders.</p>
+<p><strong>Q168.</strong> A process shows state Z in ps and <code>kill -9</code> does nothing. What is it, and what removes it?</p>
+<p><strong>Answer:</strong> A zombie: it already exited, so there's nothing to signal; the parent must collect its status (or die, so init reaps it)</p>
+<p>A zombie is just an exit-status record.</p>
+<p><strong>Q169.</strong> A process is stuck in state D (uninterruptible sleep) on disk I/O. Will SIGKILL end it immediately?</p>
+<p><strong>Answer:</strong> No: it can't be killed until the I/O completes</p>
+<p>The kernel considers the operation too delicate to abort.</p>
+<p><strong>Q170.</strong> <code>free -h</code> shows 1.0Gi free but 3.3Gi available. Is the system low on memory?</p>
+<p><strong>Answer:</strong> No: much of it is reclaimable page cache (buff/cache), which counts as available</p>
+<p>Look at available, not free.</p>
+<p><strong>Q171.</strong> A service must run 'every 5 minutes' without overlapping itself if a run takes 6 minutes. Which mechanism fits best?</p>
+<p><strong>Answer:</strong> A systemd timer using OnUnitActiveSec= (runs after the previous run finished)</p>
+<p>OnUnitActiveSec counts from the end of the last run. Output also goes to journald.</p>
+<p><strong>Q172.</strong> You added a new line to /etc/fstab. How do you check it without rebooting?</p>
+<p><strong>Answer:</strong> Run <code>sudo mount -a</code>, which attempts every entry as boot would</p>
+<p>A bad non-root entry can drop the next boot into an emergency shell.</p>
+<p><strong>Q173.</strong> <code>/etc/resolv.conf</code> says <code>nameserver 127.0.0.53</code>. Where do DNS queries really go?</p>
+<p><strong>Answer:</strong> To systemd-resolved's local stub, which forwards them to the upstream server shown by <code>resolvectl status</code></p>
+<p>nsswitch.conf's hosts: files dns line decides that /etc/hosts is checked first.</p>
+<p><strong>Q174.</strong> A service is listening on port 9090 (<code>ss -tln</code> shows it), but remote connections time out while local ones work. What is the most likely cause?</p>
+<p><strong>Answer:</strong> A firewall rule dropping the port (check nft list ruleset / iptables)</p>
+<p>The capstone's Fault 2: the socket is LISTENing, yet packets never reach it.</p>
+<p><strong>Q175.</strong> <code>curl</code> returns HTTP status 000 for your service. What does it tell you?</p>
+<p><strong>Answer:</strong> No HTTP exchange took place: nothing accepted the connection (service stopped, wrong port or firewall), so check the service and socket first</p>
+<p>Status 000 means curl got no HTTP response.</p>
+<p><strong>Q176.</strong> Which two kernel mechanisms make a process look like a container, and what does each do?</p>
+<p><strong>Answer:</strong> Namespaces limit what it can see (PID, mount, UTS, network, user…); cgroups limit what it can use (CPU, memory…)</p>
+<p>A container is a normal process on the host kernel.</p>
+<p><strong>Q177.</strong> A process in a cgroup with memory.max=50M tries to allocate more. What happens?</p>
+<p><strong>Answer:</strong> The kernel OOM-kills it inside the cgroup (CONSTRAINT_MEMCG); the host keeps running</p>
+<p>dmesg shows 'Memory cgroup out of memory: Killed process'.</p>
+<p><strong>Q178.</strong> Why does <code>iptables -V</code> print (nf_tables) on modern distros?</p>
+<p><strong>Answer:</strong> iptables is a compatibility front end that translates rules into nftables, both configuring netfilter's hooks</p>
+<p>Neither tool is netfilter itself.</p>
+<h2 id="practical-coding-questions">Practical coding questions<a class="headerlink" href="#practical-coding-questions" title="Permanent link">&para;</a></h2>
+<h3 id="redirection-order">Redirection order<a class="headerlink" href="#redirection-order" title="Permanent link">&para;</a></h3>
+<p>Using the emit function (writes one line to stdout and one to stderr), write redirections so that: A) both streams end up in both.log, B) stdout goes to out.log and stderr to err.log, C) demonstrate the common mistake by writing <code>2&gt;&amp;1</code> BEFORE <code>&gt; wrong.log</code>, capturing what leaks to the terminal with $( ). Print the results exactly as shown in the expected output.</p>
+<p>Starter code:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>emit() { echo "to stdout"; echo "to stderr" &gt;&amp;2; }
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a># A: send both streams into both.log
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>emit # your redirection here
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>echo "A: $(wc -l &lt; both.log | tr -d ' ') lines"
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a># B: stdout to out.log, stderr to err.log
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>emit # your redirection here
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>echo "B: out=[$(cat out.log)] err=[$(cat err.log)]"
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a># C: wrong order
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>leaked=$(emit) # your redirection here
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>echo "C: leaked=[$leaked] wrong.log=[$(cat wrong.log)]"
+</code></pre></div>
+<p>Expected output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>A: 2 lines
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>B: out=[to stdout] err=[to stderr]
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>C: leaked=[to stderr] wrong.log=[to stdout]
+</code></pre></div>
+<p>??? success "Show a solution"</p>
+<div class="highlight"><pre><span></span><code>```
+emit() { echo "to stdout"; echo "to stderr" &gt;&amp;2; }
+
+# A: send both streams into both.log
+emit &gt; both.log 2&gt;&amp;1
+echo "A: $(wc -l &lt; both.log | tr -d ' ') lines"
+
+# B: stdout to out.log, stderr to err.log
+emit &gt; out.log 2&gt; err.log
+echo "B: out=[$(cat out.log)] err=[$(cat err.log)]"
+
+# C: wrong order - stderr is duplicated onto the terminal (here, captured by $( ))
+leaked=$(emit 2&gt;&amp;1 &gt; wrong.log)
+echo "C: leaked=[$leaked] wrong.log=[$(cat wrong.log)]"
+```
+
+`&gt; file 2&gt;&amp;1` points fd 1 at the file and then fd 2 at wherever fd 1 now points. With `2&gt;&amp;1 &gt; file`, fd 2 is duplicated onto the terminal first, so errors still leak. Verified by running the solution in bash: output matches.
+</code></pre></div>
+<h3 id="hard-link-versus-symlink">Hard link versus symlink<a class="headerlink" href="#hard-link-versus-symlink" title="Permanent link">&para;</a></h3>
+<p>Create original.txt containing hello, a hard link hardlink.txt and a symlink symlink.txt. Print the link count of original.txt, delete the original, then show whether the hard link and the symlink still work and the link count that remains.</p>
+<p>Starter code:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>echo hello &gt; original.txt
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a># create a hard link and a symlink to original.txt
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>echo "links before: $(ls -l original.txt | awk '{print $2}')"
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>rm original.txt
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>echo "hardlink: $(cat hardlink.txt)"
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>if [ -e symlink.txt ]; then echo "symlink: works"; else echo "symlink: broken"; fi
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>echo "links after: $(ls -l hardlink.txt | awk '{print $2}')"
+</code></pre></div>
+<p>Expected output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>links before: 2
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>hardlink: hello
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>symlink: broken
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>links after: 1
+</code></pre></div>
+<p>??? success "Show a solution"</p>
+<div class="highlight"><pre><span></span><code>```
+echo hello &gt; original.txt
+ln original.txt hardlink.txt
+ln -s original.txt symlink.txt
+echo "links before: $(ls -l original.txt | awk '{print $2}')"
+rm original.txt
+echo "hardlink: $(cat hardlink.txt)"
+if [ -e symlink.txt ]; then echo "symlink: works"; else echo "symlink: broken"; fi
+echo "links after: $(ls -l hardlink.txt | awk '{print $2}')"
+```
+
+A hard link is a second directory entry for the same inode (link count 2), so the data survives rm. A symlink is a separate tiny file holding a path, which breaks when the target disappears. Verified by running the solution in bash: output matches.
+</code></pre></div>
+<hr />
+<p>More free practice: the <a href="../">Linux Mastery Path</a> curriculum, the <a href="https://learnmasterypath.com/interview-pack/">Interview Prep Pack</a> and the <a href="https://learnmasterypath.com/resume/">free resume ATS check</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+  
+  <nav class="mp-related" aria-label="Related free courses">
+    <h2>Related free courses</h2>
+    <ul>
+      <li><a href="https://learnmasterypath.com/server-ops-mastery-path/">Server Ops</a></li><li><a href="https://learnmasterypath.com/nodemcu-mastery-path/">NodeMCU/IoT</a></li><li><a href="https://learnmasterypath.com/terraform-mastery-path/">Terraform</a></li><li><a href="https://learnmasterypath.com/kubernetes-mastery-path/">Kubernetes</a></li><li><a href="https://learnmasterypath.com/docker-mastery-path/">Docker</a></li>
+      <li><a href="https://learnmasterypath.com/">All 100+ courses &rarr;</a></li>
+    </ul>
+  </nav>
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../level-1/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+  <div class="mp-foot">
+    <div class="mp-foot-inner">
+      <a class="mp-foot-brand" href="https://learnmasterypath.com/"><svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg><span>Mastery Path</span></a>
+      <nav class="mp-sitelinks" aria-label="Site and legal links">
+        <a href="https://learnmasterypath.com/">All courses</a>
+        <a href="https://learnmasterypath.com/about.html">About</a>
+        <a href="https://learnmasterypath.com/contact.html">Contact</a>
+        <a href="https://learnmasterypath.com/linux-mastery-path/privacy/">Privacy Policy</a>
+        <a href="https://learnmasterypath.com/terms.html">Terms</a>
+        <a href="https://learnmasterypath.com/linux-mastery-path/license/">License</a>
+        <a href="https://learnmasterypath.com/verify/">Verify a certificate</a>
+      </nav>
+    </div>
+    <p class="mp-license-note">
+      © 2026 Vinod Kumar Sigilipelli · Except where otherwise noted, lesson content is licensed under
+      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> and code examples under the
+      <a href="https://opensource.org/license/mit">MIT License</a>.
+    </p>
+  </div>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.path", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../javascripts/progress-tracker.js"></script>
+      
+        <script src="../javascripts/final-quiz.js"></script>
+      
+    
+  </body>
+</html>
