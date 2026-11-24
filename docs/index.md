@@ -1,6 +1,6 @@
 ---
 title: "Free Linux Fundamentals Course: Kernel, Filesystem, Processes, systemd, Networking & Security Internals"
-description: "Free Linux course: 40 lessons on the kernel, filesystem/permissions, processes and memory, systemd, networking internals, namespaces/cgroups and security."
+description: "Free Linux course: 36 lessons and 4 projects on the kernel, filesystem/permissions, processes and memory, systemd, networking internals, namespaces/cgroups and security."
 ---
 
 # Linux Mastery Path
@@ -32,7 +32,7 @@ internals) couldn't be reproduced in the lab environment used to write it.
 | **3 · Networking & Security Internals** | The network stack, DNS, netfilter, sockets, SSH, SELinux/AppArmor, namespaces/cgroups, hardening | 10 | Trace a connection end-to-end and reason about an isolation or security boundary |
 | **4 · Performance, Troubleshooting & Capstone** | Tracing tools, I/O scheduling, kernel modules, `/proc`/`/sys`, boot recovery, distro/version landscape | 10 | Profile a real performance problem and bring a broken system back from a bad boot |
 
-Each level has 9 teaching modules plus a hands-on project (module 10), for **40 lessons** total.
+Each level has 9 teaching modules plus a hands-on project (module 10), which makes **36 lessons and 4 projects** in total.
 
 ## How to use this site
 
